@@ -1,0 +1,4 @@
+id, date, value, merchant
+1, Tue Nov 04 10:38:30 CST 2025, 99.95, Walmart
+2, Tue Nov 04 10:38:30 CST 2025, 85.75, Costco
+3, Tue Nov 04 10:38:30 CST 2025, 10000.0, Private Jet
