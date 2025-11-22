@@ -1,0 +1,1 @@
+[Expense [id=1, date=Tue Nov 04 11:18:34 CST 2025, value=99.95, merchant=Walmart], Expense [id=2, date=Tue Nov 04 11:18:34 CST 2025, value=85.75, merchant=Costco], Expense [id=3, date=Tue Nov 04 11:18:34 CST 2025, value=10000.0, merchant=Private Jet]]
