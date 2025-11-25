@@ -1,12 +1,12 @@
-const ReportSummary = ({ selectedExpenses, closerHandler }) => {
-    const totalAmount = selectedExpenses.reduce((sum, exp) => sum + exp.amount, 0);
+const ReportSummary = ({ selectedExpenses, closeHandler, onSave }) => {
+    const totalAmount = selectedExpenses.reduce((sum, exp) => sum + Number(exp.amount), 0);
     const reportDate = new Date().toLocaleDateString();
 
     const saveHandler = () => {
         // create report object
         const report = {
             id: Math.random().toString(),
-            date: reportDate(),
+            date: reportDate,
             total: totalAmount,
             expenseCount: selectedExpenses.length,
         };
@@ -16,46 +16,46 @@ const ReportSummary = ({ selectedExpenses, closerHandler }) => {
     };
 
     return (
-        <div>
-            <div>
+        <div className='bg-slate-200 p-6 m-5 rounded-2xl shadow-inner w-full'>
+            <div className='bg-indigo-900 text-white p-6 flex justify-between items-center'>
                 {/* heading */}
                 <h2>Expense Report</h2>
                 <p>Report Date: {reportDate}</p>
             </div>
-            <div>
+            <div className='w-full text-left border-collapse'>
                 {/* table of expenses */}
-                <table>
+                <table className = "w-full text-left">
                     <thead>
                         <tr>
-                            <th>Date</th>
-                            <th>Title</th>
-                            <th>Amount</th>
+                            <th className="py-2">Date</th>
+                            <th className="py-2">Title</th>
+                            <th className="py-2 text-right">Amount</th>
                         </tr>
                     </thead>
                     <tbody>
                         {/* each row is a selected expense */}
                         {selectedExpenses.map(exp => (
                             <tr key={exp.id}>
-                                <td>{exp.date.toLocaleDateString()}</td>
-                                <td>{exp.title}</td>
-                                <td>${exp.amount}</td>
+                                <td className='py-2'>{exp.date.toLocaleDateString()}</td>
+                                <td className='py-2'>{exp.title}</td>
+                                <td className='py-2 text-right'>${exp.amount}</td>
                             </tr>
                         ))}
                     </tbody>
                     <tfoot>
                         {/* summary data */}
                         <tr>
-                            <td>Total</td>
-                            <td></td>
-                            <td>${totalAmount}</td>
+                            <td className='py-2'>Total</td>
+                            <td className='py-2'></td>
+                            <td className='py-2 text-right'>${totalAmount}</td>
                         </tr>
                     </tfoot>
                 </table>
             </div>
-            <div>
+            <div className='p-4 bg-slate-400 text-right border-t flex justify-end gap-2' >
                 {/* interactions */}
-                <button onClick={saveHandler}>Save Report</button>
-                <button onClick={closeHandler}>Close</button>
+                <button className="bg-emerald-500 text-white px-4 py-2 rounded over:bg-emerald-600 transition-colors shadow-md flex items-center gap-2" onClick={saveHandler}>Save Report</button>
+                <button className="bg-emerald-500 text-white px-4 py-2 rounded over:bg-emerald-600 transition-colors shadow-md flex items-center gap-2" onClick={closeHandler}>Close</button>
             </div>
         </div>
     );
