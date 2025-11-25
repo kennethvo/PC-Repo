@@ -1,8 +1,14 @@
 import ExpenseDate from "./ExpenseDate";
 
-const ExpenseItem = ({ title, amount, date }) => {
+const ExpenseItem = ({ id, title, amount, date , isSelected, onToggle }) => {
     return (
-        <div className = " flex items-center justify-between bg-white rounded-xl p-3 border-indigo-500 border-l-4 hover:shadow-md">
+        <div className = {`flex items-center justify-between rounded-xl p-3 my-3 border-l-4 shadow-sm hover:shadow-md transition=all duration-300 ${isSelected ? 'bg-indigo-200 border-indigo-600 ring-2 ring-indigo-200' : 'bg-white border-transparent hover:shadow-md'}`}>
+            
+            <div className = "flex items-center ">
+                <input type = "checkbox"
+                checked={isSelected}
+                onChange={() => {onToggle(id);}}/>
+            </div>
             <div>
                 <ExpenseDate date = {date} />
             </div>

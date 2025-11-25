@@ -34,6 +34,7 @@ function App() {
 
   const [expenses, setExpenses] = useState(Dummy_Expenses);
   const [filteredYear, setFilteredYear] = useState('2023');
+  const [selectedIds, setSelectedIds] = useState([]);
 
   const addExpenseHandler = (expense) => {
     const expenseWithId = { ...expense, id: Math.random().toString() }
@@ -41,7 +42,7 @@ function App() {
     setExpenses((prevExpenses) => {
       return [expenseWithId, ...prevExpenses] //pervious expenses is an array/collection
       // [ expense, old expense 1, old expense 2, old expense 3 ]
-      return [expenseWithId, prevExpenses] //
+      // return [expenseWithId, prevExpenses] //
       //  [ expense, Array of Expenses ]
     })
   };
@@ -49,6 +50,16 @@ function App() {
   const filterChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
   };
+
+  const toggleExpenseHandler = (id) => {
+    setSelectedIds((prevSelected) => {
+      if (prevSelected.includes(id)) {
+        return prevSelected.filter((selectedId) => selectedId !== id);
+      } else {
+        return [...prevSelected, id];
+      }
+      } );
+  }
 
   const filteredExpenses = expenses.filter((expense) => {
     return expense.date.getFullYear().toString() === filteredYear;
@@ -58,12 +69,14 @@ function App() {
     <div className=" min-h-screen bg-slate-900 px-4 font-sans">
       <h1 className=" text-3xl text-slate-100 font-bold"> Testing testing, 123!</h1>
       <ExpenseFilter
-        selected={ filteredYear }
-        onChangeFilter={ filterChangeHandler } />
+        selected={filteredYear}
+        onChangeFilter={filterChangeHandler} />
       <ExpenseForm
-        onSaveExpenseData={ addExpenseHandler } />
+        onSaveExpenseData={addExpenseHandler} />
       <ExpenseList
-        items={ filteredExpenses } />
+        items={filteredExpenses}
+        selectedIds={selectedIds}
+        onToggleItem={toggleExpenseHandler} />
     </div>
   )
 }
