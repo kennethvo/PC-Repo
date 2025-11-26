@@ -1,4 +1,4 @@
-const SavedReportsList = ({ reports }) => {
+const SavedReportsList = ({ reports, onDelete }) => {
 
     if (reports.length === 0) {
         return null;
@@ -11,13 +11,20 @@ const SavedReportsList = ({ reports }) => {
             {/* I need to display the reports by iterating through the collections? */}
             <div>{reports.map(report => (
                 <div className='flex justify-between items-center p-4 bg-slate-50 rounded-lg border border-slate-100 hover:border-indigo-200 transition-colors'>
-                    <div className = "flex flex-col">
-                    <p>Report {report.id.substring(2, 6)}</p>
-                    <p>generated on {report.date} - {report.expenseCount} expenses</p>
-                    <p>${report.total}</p>
+                    <div className="flex flex-col">
+                        <p>Report {report.id.substring(2, 6)}</p>
+                        <p>generated on {report.date} - {report.expenseCount} expenses</p>
+                    </div>
+                    <div className='flex items-center gap-4'>
+                        <div className='flex items-center gap-4'>
+                            <p>${report.total}</p>
+                        </div>
+                        <div>
+                            <button onClick={() => onDelete(report.id)} className='text-red-600 hover:text-red-800 font-bold text-lg rounded px-2 py-2'>X</button>
+                        </div>
                     </div>
                 </div>
-            ))};
+            ))}
             </div>
         </div>
     );

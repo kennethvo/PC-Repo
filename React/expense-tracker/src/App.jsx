@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ExpenseForm from './components/ExpenseForm'
 import ExpenseList from './components/Expenses/ExpenseList'
 import ExpenseFilter from './components/Expenses/ExpenseFilter'
@@ -37,7 +37,23 @@ function App() {
   const [expenses, setExpenses] = useState(Dummy_Expenses);
   const [filteredYear, setFilteredYear] = useState('2023');
   const [selectedIds, setSelectedIds] = useState([]);
-  const [saveReports, setSaveReports] = useState([]);
+  const [saveReports, setSaveReports] = useState(() => {
+    try {
+      const savedReports = localStorage.getItem('savedReports');
+      return savedReports ? JSON.parse(savedReports) : [];
+    } catch (error) {
+      console.warn("failed to retrieve from local storage", error);
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem('savedReports', JSON.stringify(saveReports));
+  }, [saveReports]);
+
+  const deleteReportHandler = (id) => {
+    setSaveReports((prevReports) => prevReports.filter((report) => report.id !== id));
+  };
 
   const addExpenseHandler = (expense) => {
     const expenseWithId = { ...expense, id: Math.random().toString() }
@@ -73,7 +89,7 @@ function App() {
     return expense.date.getFullYear().toString() === filteredYear;
   });
 
-  const reportExpenses = expenses.filter((expense) => {return selectedIds.includes(expense.id);});
+  const reportExpenses = expenses.filter((expense) => { return selectedIds.includes(expense.id); });
 
   return (
     <div className=" min-h-screen bg-slate-900 px-4 font-sans">
@@ -91,8 +107,9 @@ function App() {
       <ReportSummary
         selectedExpenses={reportExpenses}
         onSave={saveReportHandler}
-        closeHandler={saveReportHandler} />
-      <SavedReportsList reports={saveReports} />
+        closeHandler={() => setSelectedIds([])} />
+      <SavedReportsList reports={saveReports}
+        onDelete={deleteReportHandler} />
     </div>
   )
 }
