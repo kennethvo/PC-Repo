@@ -13,7 +13,7 @@ const ExpenseItem = ({ id, title, amount, date , isSelected, onToggle }) => {
                 <ExpenseDate date = {date} />
             </div>
             <h1>{title}</h1>
-            <h2>${amount}</h2>
+            <h2>$ {amount}</h2>
         </div>
     );
 };

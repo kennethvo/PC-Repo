@@ -8,7 +8,7 @@ const ExpenseList = ({ items, selectedIds, onToggleItem }) => {
     return (
         <div className = "w-full mx-auto bg-slate-200 p-6 rounded-2xl shadow-inner">
             { items.map ((expense) => (
-                <ExpenseItem 
+                <ExpenseItem
                     id = {expense.id}
                     title = {expense.title}
                     amount = {expense.amount}
