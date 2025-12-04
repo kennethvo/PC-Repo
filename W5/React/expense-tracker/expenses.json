@@ -1,0 +1,28 @@
+{
+  "expenses": [
+    {
+      "id": "c6d7",
+      "title": "New Expense!",
+      "amount": "59.99",
+      "date": "2023-01-01T06:00:00.000Z"
+    },
+    {
+      "id": "1503",
+      "title": "Lunch",
+      "amount": 25.45,
+      "date": "2025-11-26T00:00:00.000Z"
+    },
+    {
+      "id": "ef0a",
+      "title": "Dinner",
+      "amount": 75.5,
+      "date": "2025-02-26T00:00:00.000Z"
+    },
+    {
+      "id": "c2a5",
+      "title": "met-rx",
+      "amount": 1000000,
+      "date": "2025-11-26T00:00:00.000Z"
+    }
+  ]
+}

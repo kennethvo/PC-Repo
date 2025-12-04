@@ -1,0 +1,224 @@
+{
+  "main": {
+    "id": "d9ce1dcb6f083497",
+    "type": "split",
+    "children": [
+      {
+        "id": "a7ca01eaf926b85a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0408ce781a9382ac",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6 - Full Notes/Toshiba HR Screening Notes.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Toshiba HR Screening Notes"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c95446741bcf1804",
+    "type": "split",
+    "children": [
+      {
+        "id": "ff55069fa1bed119",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "130a3989d8525fc5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "e8803f193066afa9",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "b3df790af9b6a3e6",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "8cd866b32062306e",
+    "type": "split",
+    "children": [
+      {
+        "id": "b14086ce999fa311",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e04b2b950477754d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "CS 4365.002 - Artificial Intelligence.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for CS 4365.002 - Artificial Intelligence"
+            }
+          },
+          {
+            "id": "915aa59a1d54d039",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "CS 4365.002 - Artificial Intelligence.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from CS 4365.002 - Artificial Intelligence"
+            }
+          },
+          {
+            "id": "dd01c50930fda3d2",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "be2fbdaa5e78c524",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "CS 4365.002 - Artificial Intelligence.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of CS 4365.002 - Artificial Intelligence"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Create new base": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "smart-random-note:Open Random Note from Search": false
+    }
+  },
+  "active": "0408ce781a9382ac",
+  "lastOpenFiles": [
+    "6 - Full Notes/Revature/Revature - Spring.md",
+    "6 - Full Notes/Toshiba HR Screening Notes.md",
+    "6 - Full Notes/Revature/Revature First Day Notes.md",
+    "6 - Full Notes/Revature/Revature - Web Dev.md",
+    "1 - Rough Notes/List of things to buy before I quit.md",
+    "1 - Rough Notes/NOTE FOR THE INTERVIEW.md",
+    "6 - Full Notes/Revature/P0 Notes for Presentation.md",
+    "1 - Rough Notes/Temp Script for Reel.md",
+    "1 - Rough Notes/Temp notes for Revature Interview.md",
+    "1 - Rough Notes/Unorganized Story Concepts.md",
+    "6 - Full Notes/Revature/Revature - QC Notes.md",
+    "6 - Full Notes/Revature/Revature - Portfolios.md",
+    "6 - Full Notes/Revature/Rev Training - Java.md",
+    "1 - Rough Notes/Story Ideas.canvas",
+    "1 - Rough Notes/Playdate Storyboard.canvas",
+    "6 - Full Notes/Revature/Revature - P0 Notes.md",
+    "6 - Full Notes/Revature/Revature - Day 9.md",
+    "6 - Full Notes/Revature/Revature - Day 10.md",
+    "6 - Full Notes/Revature/Revature - Day 7.md",
+    "6 - Full Notes/Revature/Revature - Day 8.md",
+    "6 - Full Notes/Revature/Revature - Day 6.md",
+    "6 - Full Notes/Revature/Revature - Day 5.md",
+    "6 - Full Notes/Revature - P0 Notes.md",
+    "1 - Rough Notes/Revature First Day Notes.md",
+    "6 - Full Notes/Revature - QC Notes.md",
+    "6 - Full Notes/Revature - Portfolios.md",
+    "6 - Full Notes/Untitled.base",
+    "6 - Full Notes/Revature - Day 10.md",
+    "6 - Full Notes/Revature - Day 9.md",
+    "6 - Full Notes/Revature",
+    "School/Pasted image 20250129115220.png",
+    "6 - Full Notes/Artists to Learn From.canvas",
+    "2 - Source Material/Pictures",
+    "6 - Full Notes/FreeCodeCamp",
+    "6 - Full Notes/NeetCode",
+    "2 - Source Material",
+    "6 - Full Notes/AWS",
+    "1 - Rough Notes",
+    "6 - Full Notes",
+    "5 - Template",
+    "Pasted image 20250210113614.png",
+    "Pasted image 20250129115219.png"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "expenses": [
+    {
+      "id": "e1",
+      "title": "Office Supplies",
+      "amount": 94.12,
+      "date": "2025-08-14"
+    },
+    {
+      "id": "e2",
+      "title": "New Laptop",
+      "amount": 799.49,
+      "date": "2025-03-12"
+    },
+    {
+      "id": "e3",
+      "title": "Car Insurance",
+      "amount": 294.67,
+      "date": "2025-03-28"
+    },
+    {
+      "id": "b137",
+      "title": "Groceries",
+      "amount": 85.99,
+      "date": "2025-11-23T00:00:00.000Z"
+    },
+    {
+      "id": "2593",
+      "title": "Dinner",
+      "amount": 58.6,
+      "date": "2025-11-23T00:00:00.000Z"
+    },
+    {
+      "id": "e4",
+      "title": "Team Lunch",
+      "amount": 123.45,
+      "date": "2025-06-02"
+    },
+    {
+      "id": "a912",
+      "title": "Cloud Hosting Fees",
+      "amount": 256.8,
+      "date": "2025-07-19"
+    },
+    {
+      "id": "e5",
+      "title": "Taxi to Client Meeting",
+      "amount": 42.75,
+      "date": "2025-05-11T00:00:00.000Z"
+    },
+    {
+      "id": "4992",
+      "title": "Conference Registration",
+      "amount": 649,
+      "date": "2025-09-03"
+    },
+    {
+      "id": "x72",
+      "title": "Coffee & Snacks",
+      "amount": 18.33,
+      "date": "2025-11-22T00:00:00.000Z"
+    },
+    {
+      "id": "0567",
+      "title": "Parking",
+      "amount": 2,
+      "date": "2025-11-23T00:00:00.000Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "u1",
+      "name": "Richard"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+/* Copy this into src/index.css 
+   In Tailwind v4, this single line replaces the old @tailwind directives.
+*/
+
+@import "tailwindcss";

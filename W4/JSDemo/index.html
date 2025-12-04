@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS Demo</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>JS Demo</h1>
+        </header>
+
+        <!-- first section, user input/trigger -->
+        <div class="card">
+            <label for="urlInput"> Target URL: </label>
+            
+            <div class="inputGroup">
+            <input type="url" id="urlInput" value="placholder">
+
+            <button id="fetchBtn"> >> </button>
+            </div>
+        </div>
+
+        <!-- second section, feedback -->
+        <div id="statusContainer" class="hidden" >
+        </div>
+
+        <!-- third section, request result -->
+        <div class="resultContainer">
+            <code id="output">// Results will appear here...</code>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>
+

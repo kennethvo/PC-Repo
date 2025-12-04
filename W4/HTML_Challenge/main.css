@@ -1,0 +1,19 @@
+table, th, td {
+    border: 1px solid black;
+}
+
+p {
+    color: blue;
+}
+
+.myparagraph {
+    color: red;
+}
+
+.someotherparagraph {
+    color: green;
+}
+
+#locationsheader {
+    color: yellow;
+}

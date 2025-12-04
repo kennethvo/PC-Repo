@@ -13,6 +13,7 @@ public class ExpenseService {
     // Constructor
     public ExpenseService(IRepository repository) {
         this.repo = repository;
+        this.seed();
     }
 
     // Methods
@@ -41,12 +42,28 @@ public class ExpenseService {
         System.out.println(repo.loadExpenses());
     }
 
-    public void sumExpenses(){
+    public double sumExpenses(){
         List<Expense> expenses = repo.loadExpenses();
         double sum = 0;
         for (Expense e : expenses ){
             sum += e.getValue();
         }
-        System.out.println(sum);
+        return sum;
+    }
+
+    public void seed(){
+        List<Expense> expenses = repo.loadExpenses();
+        if(expenses.isEmpty()) {
+            System.out.println("No expenses found in repo. Generating expenses...");
+
+            this.createNewExpense(1, 99.95, "Walmart");
+            this.createNewExpense(2, 55.99, "Costco");
+            this.createNewExpense(3, 29.99, "HEB");
+            this.createNewExpense(4, 72.00, "Buffalo Wild Wings");
+
+            System.out.println("Expenses loaded into repo.");
+        } else {
+            System.out.println("Expenses loaded from repo.");
+        }
     }
 }

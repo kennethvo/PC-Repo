@@ -1,0 +1,31 @@
+<p>Hello from Parent Component!</p>
+
+<p>LOOK AT MY CHILDREN:</p>
+
+<!-- *ngFor - great for DYNAMICALLY RENDERING multiple elements -->
+<div>
+    <!-- "for every element in the array called arr, render this text" -->
+
+    <app-child-component *ngFor="let num of arr" [index]="num"></app-child-component>
+
+   <!-- <p *ngFor = "let num of arr; let i = index">Hello I'm child {{i}}</p> -->
+</div>
+
+<!-- {{STRING INTERPOLATION}} - taking a value from the TS and rendering it on the HTML page -->
+<h3>I have {{arr.length}} children!</h3>
+
+<!-- *ngIf - great for CONDITIONALLY RENDERING an element -->
+ <p *ngIf = "arr.length > 4">Oh god I'm so exhausted I have so many children</p>
+
+ <!-- (EVENT BINDING) - attaching a function in the TS to some event in the HTML -->
+ <button (click)="showSurprise()">Click me for a surprise</button>
+
+ <!-- [PROPERTY BINDING] - using the value of a variable in the TS to determine the value of an element's attributes -->
+<h1 [hidden]="hideElement">Now I'm visible!</h1>
+
+<!-- [(TWO WAY BINDING)] - Lets us take user input and save it in a variable defined in the TS -->
+<h3>Wait a minute... who ARE you?</h3>
+
+<input type="text" [(ngModel)]="nameInput">
+
+<p *ngIf="nameInput">Nice to meet you, {{nameInput}}</p>

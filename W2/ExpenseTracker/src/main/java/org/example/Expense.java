@@ -19,6 +19,8 @@ public class Expense {
 
     public int getId() { return this.id; }
     public double getValue() { return this.value; }
+    public Date getDate() { return this.date; }
+    public String getMerchant() { return this.merchant; }
 
     // Methods
     @Override

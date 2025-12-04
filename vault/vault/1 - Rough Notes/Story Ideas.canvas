@@ -1,0 +1,8 @@
+{
+	"nodes":[
+		{"id":"e9a9bd7c79ad9680","type":"text","text":"First Story Idea - One Page Beauty","x":-120,"y":-360,"width":250,"height":60,"color":"3"},
+		{"id":"719884dc429c06cb","type":"text","text":"the story is told through wide shots of the city of the walk home of a girl\n- standing in a train\n- walking in the street\n- sitting on a park bench\n- staring at the sky\n- shots of just the clouds and phonelines\n- final panel is of her on her apartment balcony","x":40,"y":-162,"width":250,"height":362},
+		{"id":"5c01c1f68b070d83","type":"file","file":"2 - Source Material/Pictures/51b0b977b39579b7c20b1951162066e9.jpg","x":-407,"y":-300,"width":447,"height":559}
+	],
+	"edges":[]
+}

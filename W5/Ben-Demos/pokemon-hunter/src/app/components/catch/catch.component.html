@@ -1,0 +1,14 @@
+<div class="container-fluid">
+
+    <div>
+        <h3>Click a Pokemon to Catch it</h3>
+        <button (click)="getPokemon()" class="btn btn-sm btn-dark">Reshuffle</button>
+    </div>
+
+    <div>
+        <!-- Signals are functions - so we use pokemon() instead of pokemon -->
+        <img *ngIf="this.pokemon().id" (click)="catchPokemon()" src="{{pokemon().sprite}}" alt="" width="150">
+        {{pokemon().name | titlecase}}
+    </div>
+
+</div>

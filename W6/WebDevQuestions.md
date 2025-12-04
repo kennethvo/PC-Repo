@@ -1,0 +1,391 @@
+# Web Development Interview Preparation Guide
+
+## HTTP & Web Fundamentals
+
+### Request Lifecycle
+Walk me through the HTTP Lifecycle. What happens step-by-step from the moment a user types a URL into the browser until the page is displayed?
+
+### Statelessness & Cookies
+HTTP is described as a "stateless" protocol. What does this mean? How do Cookies help bridge this gap to maintain a user's session state?
+
+### HTTP Methods
+
+#### GET vs. POST
+Beyond just "retrieving" and "sending" data, what are the technical differences between GET and POST methods regarding data visibility in the URL, caching behavior, and idempotency?
+
+#### PUT vs. PATCH
+Both of these HTTP methods are used to update resources. What is the semantic difference between them? Which one is intended for a partial update versus a complete replacement?
+
+### HTTP Headers
+What is the purpose of the Content-Type header in a request? How is it different from the Accept header?
+
+### Status Codes
+
+#### 4xx vs. 5xx Errors
+If an API call fails, how do you distinguish between a 4xx error and a 5xx error? Can you give an example scenario for a 401, 403, and 500 status code?
+
+#### 3xx Status Codes
+What does the 3xx range of status codes generally indicate? Specifically, what is the difference between a 301 (Moved Permanently) and a 302 (Found/Temporary Redirect)?
+
+---
+
+## HTML Structure & Semantics
+
+### The DOM Tree
+Explain the relationship between your HTML code and the DOM (Document Object Model). When the browser parses your HTML, what is it actually constructing in memory?
+
+### Block vs. Inline Elements
+What is the fundamental layout difference between Block-level elements (like `<div>` or `<p>`) and Inline elements (like `<span>` or `<a>`)? Can an inline element contain a block element inside it?
+
+### Semantic HTML
+Why is it better to use semantic tags like `<nav>`, `<article>`, and `<footer>` rather than using generic `<div>` tags for everything? How does this impact Accessibility (Screen Readers) and SEO?
+
+### Forms
+
+#### Form Validation
+HTML5 introduced built-in Validation attributes (like `required`, `pattern`, `type="email"`). Why is it still necessary to validate data on the server side even if you have these front-end checks?
+
+#### The `<label>` Tag
+How do you properly associate a `<label>` with an `<input>` element? Why is this association critical for user experience (clicking the text to focus the box)?
+
+#### Input Types
+HTML5 introduced specific input types like `type="number"`, `type="date"`, and `type="email"`. How do mobile browsers typically react to these specific types compared to a standard desktop browser?
+
+---
+
+## CSS Styling & Layout
+
+### The Box Model
+Explain the CSS Box Model. If I set an element's width to 200px and add 20px of padding, what is the actual rendered width of the element? How does `box-sizing: border-box` change this calculation?
+
+### Specificity & The Cascade
+If an HTML element is targeted by an ID selector, a Class selector, and an Element selector simultaneously, which style wins? Explain how Specificity is calculated.
+
+### Layout Systems
+
+#### Flexbox vs. Grid
+You have both Flexbox and CSS Grid available for layout. In what scenario would you strictly choose Grid over Flexbox? (Hint: One-dimensional vs. Two-dimensional layouts).
+
+#### Positioning
+How does the `position` property work? Specifically, what happens when you set an element to `absolute` inside a parent container that has `position: relative`?
+
+### Responsive Design
+What creates a Responsive website? Explain how Media Queries work and the concept of a "Mobile-First" approach.
+
+### CSS Variables
+What is the benefit of using native CSS variables (`--main-color`) over hard-coded hex values? How does the "Cascade" affect variables (i.e., overriding a variable in a specific container)?
+
+### Pseudo-classes vs. Pseudo-elements
+What is the difference between a Pseudo-class (like `:hover` or `:nth-child`) and a Pseudo-element (like `::before` or `::after`)?
+
+---
+
+## JavaScript Core & Logic
+
+### Variable Declaration
+
+#### var, let, and const
+Explain Variable Scope in JavaScript. How does `var` differ from `let` and `const` regarding function scoping vs. block scoping?
+
+### Hoisting
+What is Hoisting? If I try to access a function declared with the `function` keyword before its definition line, does it work? What happens if I do the same with a `const` arrow function?
+
+### this Context
+How is the value of the `this` keyword determined in JavaScript? How does it behave differently inside a standard function versus an Arrow Function?
+
+### Type Coercion
+What is the difference between `==` (loose equality) and `===` (strict equality)? Can you give an example of Type Coercion leading to an unexpected result?
+
+### ES6+ Features
+
+#### Spread vs. Rest Operators
+The `...` syntax is used for both Spread and Rest. Can you explain the difference?
+
+- Scenario A: `function myFunc(...args) { }`
+- Scenario B: `const newArr = [...oldArr, 4, 5]`
+
+#### Template Literals
+Beyond just combining strings, what features do Template Literals (backticks `` ` ``) offer that standard string concatenation (`' ' + ' '`) does not? (Hint: Multi-line strings).
+
+#### Default Parameters
+In modern JavaScript, how do you set a Default Parameter for a function? What happens if you pass `undefined` versus `null` to that parameter?
+
+### Strict Mode
+What does `"use strict"` actually do when added to the top of a JavaScript file? Can you name one "bad practice" that it prevents you from doing?
+
+---
+
+## JavaScript DOM & Asynchronous Programming
+
+### Event Handling
+
+#### Event Bubbling vs. Capturing
+When a user clicks a button nested inside a div, the event propagates through the DOM. Explain the difference between Bubbling and Capturing phases. How does `event.stopPropagation()` affect this?
+
+#### Event Delegation
+Instead of adding an event listener to 100 individual list items (`<li>`), developers often add one listener to the parent `<ul>`. How does this work, and why is it better for performance?
+
+### Asynchronous JavaScript
+
+#### Promises vs. Async/Await
+Async/Await is often described as "syntactic sugar" for Promises. How does using async/await improve code readability, specifically regarding error handling with try/catch blocks?
+
+#### Fetch API
+The Fetch API is promise-based. When `fetch()` returns a promise, does a generic 404 or 500 network error cause the promise to reject? Or do you have to handle that manually?
+
+### Data Handling
+
+#### JSON Handling
+When sending data to a server via fetch, you often use `JSON.stringify()`. When receiving data, you use `JSON.parse()` (or `.json()`). What data types cannot be stored in valid JSON? (Hint: Functions or undefined).
+
+---
+
+## TypeScript
+
+### TypeScript Fundamentals
+
+#### TypeScript vs. JavaScript
+TypeScript is a "superset" of JavaScript. What does the TypeScript Compiler actually do? Does the browser run TypeScript code directly?
+
+#### "Any" vs. "Unknown"
+TypeScript has a special `any` type, but often `unknown` is considered a safer alternative. Why is `unknown` safer? What must you do before using a variable typed as `unknown`?
+
+#### unknown vs any (Advanced Context)
+In strict type checking contexts, `unknown` is often required. If you receive a variable of type `unknown`, what must you do before you can access properties on it?
+
+### Type Systems
+
+#### Interfaces vs. Type Aliases
+In many cases, Interfaces and Type Aliases can achieve the same goal. When would you specifically prefer an interface (perhaps regarding declaration merging) over a type?
+
+#### Union Types
+What is a Union Type in TypeScript? How does it allow for more flexible code compared to a language like Java, while still maintaining type safety?
+
+#### Tuples
+TypeScript has Tuples, which look like arrays. How does a Tuple like `[string, number]` enforce data structure differently than a standard array `(string | number)[]`?
+
+#### Type Guards
+What is a user-defined Type Guard? How does a function with a return type of `arg is MyType` help the compiler narrow down a Union Type (e.g., `string | number`) inside an if block?
+
+### Generics
+
+#### Basic Generics
+How would you write an array of strings using Generic syntax (e.g., `Array<...>`)? Why are Generics useful when creating reusable functions that need to work with different data types?
+
+#### Generics & Constraints
+How do you apply a Constraint to a Generic type (e.g., `<T extends ...>`)? Why is this useful when you need to access a specific property (like `.length`) on a generic variable?
+
+### Advanced Type Manipulation
+
+#### keyof and Mapped Types
+What does the `keyof` operator do? How can you use it combined with Mapped Types to create a new type that makes all properties of an existing interface optional or readonly?
+
+#### Utility Types
+TypeScript provides several built-in utility types. Can you explain what `Partial<T>`, `Pick<T, K>`, and `Omit<T, K>` do? In what scenario would you use `Partial` when updating a user object?
+
+### Configuration
+
+#### tsconfig.json Target
+In the tsconfig file, there is a `target` option (e.g., ES5, ES6, ES2022). What does changing this setting actually do to the JavaScript code that is output by the compiler?
+
+---
+
+## React: Core Concepts & Components
+
+### Virtual DOM
+Explain the concept of the Virtual DOM. How does React use the "Diffing" algorithm and Reconciliation to update the real DOM efficiently? Why is this faster than manipulating the DOM directly?
+
+### JSX
+What is JSX exactly? Since browsers cannot read JSX, what does it compile down to? (Hint: React.createElement).
+
+### Props vs. State
+What is the fundamental difference between Props and State? Which one is immutable (read-only) from the perspective of the receiving component?
+
+### Unidirectional Data Flow
+React is described as having "One-Way Data Binding" or unidirectional flow. What does this mean for how data moves between parent and child components?
+
+### Controlled vs. Uncontrolled Components
+In the context of form inputs, what is the difference between a Controlled Component and an Uncontrolled Component? Which approach is generally recommended in React?
+
+### Keys in Lists
+When rendering a list of elements using `.map()`, why does React require a unique `key` prop? What issues arise if you use the array index as the key?
+
+### Synthetic Events
+When you access `e.target` in a React event handler, you aren't dealing with a native browser event. What is the SyntheticEvent system? Why does React pool these events (in older versions) or wrap them?
+
+---
+
+## React: Hooks & Lifecycle
+
+### The Rules of Hooks
+There are strict rules for using Hooks (like `useState` or `useEffect`). Why must hooks only be called at the top level of a function? Why can't they be inside loops or conditions?
+
+### useEffect Dependency Array
+What is the purpose of the dependency array `[]` as the second argument to `useEffect`? What happens if you omit it entirely versus passing an empty array?
+
+### Cleanup Function
+In a `useEffect` hook, you can return a function. When does React execute this Cleanup Function? Why is this important for things like event listeners or timers?
+
+### useContext
+What problem does the Context API (`useContext`) solve? How does it help avoid "Prop Drilling"?
+
+### useRef vs. useState
+We know `useState` triggers a re-render when updated. What does `useRef` do? Why would you use a ref to store a mutable value (like a timer ID or a previous prop value) instead of a state variable?
+
+### useMemo vs. useCallback
+Both of these hooks are used for performance optimization. What is the specific difference in what they return? (Hint: Memoizing a value vs. memoizing a function definition).
+
+---
+
+## React: State Management & Performance
+
+### State Lifting
+If two sibling components need to share the same data, how do you share that state in React? Explain the concept of "Lifting State Up."
+
+### React.memo
+How can `React.memo` prevent unnecessary re-renders of a functional component? How does it decide whether or not to re-render?
+
+### Global State (Redux/Flux Concept)
+Even if you don't use Redux, explain the Flux architecture pattern. What is the relationship between an Action, a Reducer, and the Store? Why are reducers required to be "pure functions"?
+
+---
+
+## React: Advanced Patterns & Architecture
+
+### Higher-Order Components (HOCs)
+Before Hooks became the standard, HOCs were the primary way to reuse logic. Can you explain the HOC pattern (a function that takes a component and returns a new component)? How does it compare to Custom Hooks today?
+
+### React Portals
+Usually, a child component mounts into the DOM explicitly inside its parent. What is a React Portal? Why is it the preferred solution for creating UI elements like Modals, Tooltips, or Hovercards that need to "break out" of their parent's `overflow: hidden` or z-index stacking context?
+
+### Error Boundaries
+try/catch blocks don't catch errors inside child components during rendering. What is an Error Boundary in React? Which lifecycle method (`componentDidCatch` or `getDerivedStateFromError`) must be used to create one?
+
+### Code Splitting & Suspense
+How does `React.lazy()` combined with `<Suspense>` help improve the initial load time of a large application? What does the user see while the "lazy" component is being fetched over the network?
+
+---
+
+## React: Testing & Optimization Scenarios
+
+### Performance Optimization Scenario
+**Scenario:** You have a React application where a user types into a search bar, and the app filters a list of 10,000 items in real-time. The UI is lagging significantly.
+
+**Question:** What techniques would you use to fix this? (Expected answers: Debouncing the input, using useMemo on the filtered list, or virtualizing the list window).
+
+### Testing Scenario
+**Scenario:** You need to test a component that makes an API call when it mounts.
+
+**Question:** Using a library like React Testing Library or Jest, why is it important to mock that API call rather than letting the test hit the real server? How do you test for the "loading" state versus the "success" state?
+
+---
+
+## Angular: Architecture & Binding
+
+### SPA Architecture
+Angular is a full framework for building SPAs (Single Page Applications). What is the role of the `index.html` file in an Angular app, and where does the "bootstrapping" happen?
+
+### Component vs. Module
+Explain the relationship between a Component and an NgModule. Why must a component be declared in a module (in standard Angular architecture)?
+
+### Data Binding Types
+Angular has four main forms of data binding. Can you explain and give syntax examples for:
+
+- Interpolation `{{ }}`
+- Property Binding `[ ]`
+- Event Binding `( )`
+- Two-Way Binding `[( )]`
+
+### Directives
+What is the difference between a Structural Directive (like `*ngIf` or `*ngFor`) and an Attribute Directive (like `ngClass` or `ngStyle`)? What does the asterisk (*) signify?
+
+### Pipes
+What is an Angular Pipe? How would you use a built-in pipe to format a date or currency in a template?
+
+### Decorators (@Input & @Output)
+Explain how data flows between a parent and child component using decorators. How does the child component use an EventEmitter to send data back up to the parent?
+
+### Content Projection
+What is Content Projection (often using `<ng-content>`)? How is this different from simply passing data via an `@Input`? (Hint: Think about "slots" or passing HTML structures into a child).
+
+### Lifecycle Hooks
+Angular components have a lifecycle. Explain the purpose of `ngOnInit`. How does it differ from the standard class constructor? When should you use one over the other?
+
+### HostListener
+How would you use the `@HostListener` decorator to detect a global event, such as the user resizing the browser window or pressing the 'Escape' key, from within a specific component?
+
+---
+
+## Angular: Services, Dependency Injection & RxJS
+
+### Dependency Injection (DI)
+Angular heavily relies on Dependency Injection. How do you register a Service so it is available application-wide (Singleton)? What role does the `@Injectable` decorator play?
+
+### Observables vs. Promises
+Angular uses RxJS Observables for HTTP requests and event handling. What are the key advantages of an Observable over a standard JavaScript Promise? (Hint: multiple values, cancellation, operators).
+
+### Subscribing
+An Observable is "lazy." What does that mean? Does an HTTP request trigger if you define the Observable but never call `.subscribe()`?
+
+### Async Pipe
+What is the `async` pipe in Angular? Why is it considered a best practice to use the async pipe in templates rather than manually subscribing in the component's TypeScript file?
+
+### Subjects
+In RxJS, what is the difference between a standard Observable and a Subject? How does a BehaviorSubject differ regarding the initial value?
+
+### switchMap vs. mergeMap
+This is the classic "Senior Angular Developer" question. When handling HTTP requests (like a search type-ahead), why would you choose `switchMap` over `mergeMap`? What happens to the previous pending request in each scenario?
+
+### Interceptors
+What is an HTTP Interceptor? How can it be used to automatically attach an Authorization Token (JWT) to every outgoing HTTP request?
+
+---
+
+## Angular: Forms & Routing
+
+### Template-Driven vs. Reactive Forms
+Compare Template-Driven Forms and Reactive Forms. Which one relies more on the HTML template for logic, and which one relies on the TypeScript class? Which is better for complex validation/unit testing?
+
+### Guards
+What is an Angular Route Guard (e.g., `CanActivate`)? How would you use one to protect a specific route (like `/dashboard`) from unauthenticated users?
+
+### Resolvers
+You want to ensure that specific data (like User Profile) is fully loaded before the route component is actually rendered. What is a Route Resolver? How does it improve the user experience compared to loading data inside `ngOnInit`?
+
+### Lazy Loading Modules
+How do you configure the Angular Router to Lazy Load a module (feature module)? What is the syntax difference in the `loadChildren` property?
+
+---
+
+## Angular: Deep Dive & Internals
+
+### Change Detection Strategies
+By default, Angular checks every component when any event happens. What is the OnPush change detection strategy? How does using `ChangeDetectionStrategy.OnPush` improve performance, and what specific triggers cause the component to update?
+
+### ViewEncapsulation
+Angular components have an `encapsulation` property. What is the difference between Emulated (default), Native (Shadow DOM), and None? What happens to your global CSS styles if you set a component to `ViewEncapsulation.None`?
+
+### Zone.js
+Angular is often said to rely on "Zones." What is the role of Zone.js in the framework? How does it know when an asynchronous operation (like a setTimeout or HTTP request) has finished so it can trigger change detection?
+
+### Standalone Components
+In modern Angular (v14+), modules (NgModule) are becoming optional. What is a Standalone Component? How does bootstrapping an application differ when using standalone components versus the traditional AppModule?
+
+---
+
+## Angular: Architecture Scenarios
+
+### Widget Communication Scenario
+**Scenario:** You are building a Dashboard with three distinct widgets: a Weather Widget, a Stock Ticker, and a News Feed. These widgets do not interact with each other, but they all need to communicate with a specific "Notification Bar" in the parent layout.
+
+**Question:** How would you architect this communication? Would you chain `@Output` events up the tree, or would you use a Shared Service with a Subject/BehaviorSubject? Why?
+
+---
+
+## Design & Wireframing
+
+### Fidelity Levels
+At which stage would you worry about specific colors, fonts, and pixel-perfect spacing? Why might focusing on these details too early (in Low-fidelity) be detrimental to the design process?
+
+### Wireframe Purpose
+What is the primary goal of a Wireframe? Is it to show the client the final look of the product, or is it to map out user flow and information architecture?
