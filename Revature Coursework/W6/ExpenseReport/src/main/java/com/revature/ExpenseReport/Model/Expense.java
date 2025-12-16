@@ -5,7 +5,6 @@ import lombok.ToString;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity // telling JPA that this needs to be a table in the database
 @Table(name = "expenses") // naming the table in the database
@@ -21,8 +20,6 @@ public class Expense {
     @ToString.Exclude
     private Report report;
 
-
-
     // Constructor
     public Expense() {}
 
@@ -37,9 +34,11 @@ public class Expense {
     public LocalDate getDate() { return expenseDate; }
     public BigDecimal getValue() { return expenseValue; }
     public String getMerchant() { return expenseMerchant; }
+    public Report getReport() { return report; }
 
     public void setId(String id) { this.expenseId = id; }
     public void setDate(LocalDate date) { this.expenseDate = date; }
     public void setValue(BigDecimal value) { this.expenseValue = value; }
     public void setMerchant(String merchant) { this.expenseMerchant = merchant; }
+    public void setReport(Report report) { this.report = report; }
 }

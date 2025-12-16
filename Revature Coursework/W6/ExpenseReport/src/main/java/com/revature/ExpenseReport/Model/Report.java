@@ -12,8 +12,8 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 public class Report {
-    // Fields
 
+    // Fields
     @Id @GeneratedValue
     private String reportId;
     private String reportTitle;
