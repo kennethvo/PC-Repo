@@ -14,6 +14,7 @@
    - [How Displaying Artists Works](#how-displaying-artists-works)
    - [How Displaying Songs/Albums Works](#how-displaying-songsalbums-works)
    - [How Displaying History Works](#how-displaying-history-works)
+9. [Presentation Script: Service Layer Architecture & Spotify Integration](#presentation-script-service-layer-architecture--spotify-integration)
 
 ---
 
@@ -1511,6 +1512,303 @@ Each history entry links to:
 - `Listener` (who played it)
 - `Song` (what was played)
 - `playedAt` timestamp (when it was played)
+
+---
+
+## Presentation Script: Service Layer Architecture & Spotify Integration
+
+*This script is designed to be presented in a meeting setting, explaining the service layer architecture and Spotify integration in a clear, conversational manner.*
+
+---
+
+### Introduction
+
+"Good morning everyone. Today I'm going to walk you through how our Feedback.fm backend service layer works and how we've integrated with Spotify's Web API. This is a critical part of our architecture that handles all business logic and external API communication."
+
+---
+
+### Part 1: Service Layer Architecture Overview
+
+"Let me start by explaining our service layer architecture. We follow a layered architecture pattern, which provides clear separation of concerns and makes our code maintainable and testable."
+
+#### The Layered Pattern
+
+"Our architecture has four main layers:
+
+**First, we have the Controller Layer** - These are our REST API endpoints. Controllers receive HTTP requests, extract parameters, and delegate to the service layer. They don't contain business logic - they're just the entry point.
+
+**Second is the Service Layer** - This is where all our business logic lives. Each domain entity has its own service interface and implementation. For example, we have `ListenerService`, `SongService`, `ArtistService`, and so on.
+
+**Third is the Repository Layer** - This handles all database operations. We use Spring Data JPA, which automatically generates repository implementations based on method names. This means we don't write SQL queries - Spring does it for us.
+
+**Finally, we have the Database Layer** - Our PostgreSQL database where all data is persisted."
+
+#### Service Interface Pattern
+
+"Each service follows the interface-implementation pattern. For example, we have `ListenerService` as an interface, and `ListenerServiceImpl` as the concrete implementation. This pattern gives us several benefits:
+
+- **Testability**: We can easily mock interfaces for unit testing
+- **Flexibility**: We can swap implementations without changing the rest of the code
+- **Clear Contracts**: The interface defines exactly what operations are available
+
+Let me show you how a typical service works using `ListenerService` as an example."
+
+#### Example: ListenerService
+
+"`ListenerService` manages user accounts in our system. Here's how it works:
+
+When a user logs in through Spotify OAuth, we need to create or update their profile. The service handles this with two key methods:
+
+**First, `getById()`** - This retrieves a listener by their Spotify ID. It validates the input, queries the repository, and converts the entity to a DTO for the controller.
+
+**Second, `create()` and `update()`** - These methods handle persistence. Before saving, they validate the data - checking for required fields, email format, and duplicate entries. If validation passes, they convert the DTO to an entity and save it to the database.
+
+**Key point**: All write operations are marked with `@Transactional`, which ensures data consistency. If anything goes wrong, the entire operation rolls back."
+
+#### Data Transfer Objects (DTOs)
+
+"We use DTOs - Data Transfer Objects - to transfer data between layers. DTOs are immutable records in Java, which means once created, they can't be modified. This prevents accidental data corruption.
+
+For example, `ListenerDTO` contains:
+- The listener's Spotify ID
+- Display name and email
+- Country code
+- Spotify profile URL
+- Cumulative stats like total listening time and songs played
+
+DTOs are lightweight and don't contain database relationships, making them perfect for API responses."
+
+---
+
+### Part 2: Domain Services Deep Dive
+
+"Now let me walk you through each of our domain services and what they do."
+
+#### ListenerService
+
+"`ListenerService` manages user accounts. It handles:
+- Creating new listener accounts when users first log in
+- Updating profiles when users return
+- Validating email formats and checking for duplicates
+- Managing cumulative statistics like total listening time
+
+The service ensures data integrity by validating all inputs before persistence."
+
+#### SongService
+
+"`SongService` manages song entities. It provides:
+- CRUD operations for songs
+- Search functionality by name
+- Finding songs by artist or duration
+- Managing relationships between songs, artists, and albums
+
+When we sync data from Spotify, we use this service to create or update song records in our database."
+
+#### ArtistService
+
+"`ArtistService` handles artist information. It:
+- Stores artist metadata from Spotify
+- Maintains relationships with songs and albums
+- Provides search capabilities
+
+Artists are linked to songs through a many-to-many relationship, so one artist can have many songs, and one song can have multiple artists."
+
+#### HistoryService
+
+"`HistoryService` tracks listening history. This is crucial for our analytics. It:
+- Records when a user plays a song
+- Links history entries to both the listener and the song
+- Enables querying by listener, song, or date range
+
+History entries are created automatically when we sync recently played tracks from Spotify."
+
+#### AlbumService and PlaylistService
+
+"`AlbumService` and `PlaylistService` work similarly - they manage album and playlist entities, maintaining relationships with songs and artists."
+
+---
+
+### Part 3: Spotify Integration Architecture
+
+"Now let's talk about how we integrate with Spotify's Web API. This is a critical part of our system."
+
+#### The Integration Services
+
+"We have three specialized services for Spotify integration:
+
+**First, `SpotifyAuthService`** - This handles OAuth 2.0 authentication. It:
+- Generates authorization URLs for users to log in
+- Exchanges authorization codes for access tokens
+- Handles token refresh when tokens expire
+
+**Second, `SpotifyApiService`** - This makes all API calls to Spotify. It:
+- Fetches user profiles
+- Gets top artists and tracks
+- Retrieves currently playing tracks
+- Fetches recently played history
+- Gets user playlists
+
+**Third, `SpotifySyncService`** - This synchronizes Spotify data with our database. It:
+- Syncs user profiles
+- Syncs recently played tracks
+- Syncs top artists and tracks
+- Updates cumulative statistics
+- Prevents duplicate entries"
+
+#### OAuth 2.0 Flow
+
+"Let me walk you through our authentication flow:
+
+**Step 1**: User clicks 'Login with Spotify' on the frontend. The frontend calls our `/api/auth/login` endpoint.
+
+**Step 2**: Our `SpotifyAuthService` generates an authorization URL with the required scopes - things like reading user profile, reading listening history, and reading top artists.
+
+**Step 3**: User is redirected to Spotify's authorization page, where they grant permissions.
+
+**Step 4**: Spotify redirects back to our callback endpoint with an authorization code.
+
+**Step 5**: Our `SpotifyAuthService` exchanges this code for an access token and refresh token. We use Basic Authentication with our client ID and secret.
+
+**Step 6**: We use the access token to fetch the user's profile from Spotify, then create or update their account in our database.
+
+**Step 7**: We generate a JWT token for our own API authentication and redirect the user back to the frontend with both tokens."
+
+#### API Communication Pattern
+
+"Here's how we make API calls to Spotify:
+
+**All requests use Bearer Authentication** - We attach the access token in the Authorization header.
+
+**We use Spring's RestTemplate** - This is a synchronous HTTP client that handles connection pooling and error handling.
+
+**Each API method follows a consistent pattern**:
+1. Build the URL with query parameters
+2. Create HTTP headers with the Bearer token
+3. Make the request
+4. Handle the response
+5. Transform the data if needed
+
+For example, to get top artists, we call `GET https://api.spotify.com/v1/me/top/artists` with a time range parameter. Spotify returns JSON, which we parse into a Map structure."
+
+#### Data Synchronization Strategy
+
+"This is where `SpotifySyncService` comes in. When a user accesses their dashboard, we:
+
+**First**, fetch their recently played tracks from Spotify - up to 50 tracks, which is Spotify's limit.
+
+**Second**, for each track, we:
+- Check if the song exists in our database, create it if not
+- Check if the artists exist, create them if not
+- Check if the album exists, create it if not
+- Create a history entry linking the listener, song, and timestamp
+
+**Third**, we update cumulative statistics:
+- Add the song's duration to total listening time
+- Increment the songs played counter
+
+**Fourth**, we prevent duplicates by checking if we've already recorded this specific play within the last minute.
+
+This synchronization happens automatically when users access their dashboard, ensuring our data stays up-to-date."
+
+#### Error Handling
+
+"We've implemented robust error handling:
+
+**For API failures**, we catch exceptions and return appropriate error responses. We don't let Spotify API errors crash our application.
+
+**For missing data**, we return empty lists or default values rather than throwing errors.
+
+**For authentication failures**, we return 401 status codes and clear tokens on the frontend.
+
+**For rate limiting**, we handle 429 responses gracefully, though we haven't implemented retry logic yet - that's a future enhancement."
+
+---
+
+### Part 4: Request Flow Example
+
+"Let me walk you through a complete example - what happens when a user requests their top artists:
+
+**Step 1**: Frontend makes a request to `/api/artists/top?time_range=medium_term` with the Spotify token in a custom header.
+
+**Step 2**: `ArtistController` receives the request, extracts the token and time range parameter.
+
+**Step 3**: Controller calls `SpotifyApiService.getTopArtists()` with the token and time range.
+
+**Step 4**: `SpotifyApiService` builds the URL, creates headers with Bearer authentication, and makes the HTTP request to Spotify.
+
+**Step 5**: Spotify returns JSON with artist data.
+
+**Step 6**: `SpotifyApiService` parses the response and returns it as a Map.
+
+**Step 7**: Controller transforms the Spotify response into a frontend-friendly format - extracting just the fields we need like ID, name, image, and Spotify URL.
+
+**Step 8**: Controller returns the formatted data as JSON.
+
+**Step 9**: Frontend receives the data and displays it in a grid with animations.
+
+This entire flow happens in milliseconds, and the user sees their top artists displayed beautifully."
+
+---
+
+### Part 5: Key Design Decisions
+
+"Let me highlight some key design decisions we made:
+
+**First, we separate Spotify API calls from database operations**. This means if Spotify is down, our database operations still work. We can serve cached data or show appropriate error messages.
+
+**Second, we use DTOs instead of entities in our API**. This prevents exposing internal database structure and gives us flexibility to change our database schema without breaking the API.
+
+**Third, we validate all inputs at the service layer**. This ensures data integrity regardless of where the request comes from.
+
+**Fourth, we use transactions for write operations**. This ensures data consistency - if part of an operation fails, everything rolls back.
+
+**Fifth, we handle errors gracefully**. We don't let external API failures crash our application. We log errors and return appropriate responses."
+
+---
+
+### Part 6: Statistics and Analytics
+
+"One interesting aspect is how we calculate statistics:
+
+**Total Listening Time**: We sum up the duration of all songs in a user's history. This is stored cumulatively in the database and updated during sync.
+
+**Songs Played**: We count the number of history entries. Again, this is stored cumulatively.
+
+**Day Streak**: This is calculated dynamically from recently played tracks. We extract the play dates, find consecutive days starting from today, and count backwards.
+
+**The challenge**: Spotify's recently played API only returns the last 50 tracks. For comprehensive stats, we need to store history in our database, which we do through synchronization."
+
+---
+
+### Part 7: Future Enhancements
+
+"Looking ahead, there are several enhancements we could make:
+
+**Token Refresh**: Currently, when Spotify tokens expire, users need to re-authenticate. We should implement automatic token refresh using refresh tokens.
+
+**Caching**: We could cache frequently accessed data like top artists to reduce API calls and improve performance.
+
+**Background Sync**: Instead of syncing on-demand, we could run background jobs to keep data synchronized.
+
+**Rate Limiting**: We should implement retry logic with exponential backoff for rate-limited requests.
+
+**Webhooks**: Spotify supports webhooks for real-time updates. We could use this instead of polling."
+
+---
+
+### Conclusion
+
+"In summary, our service layer provides:
+
+- **Clear separation of concerns** through layered architecture
+- **Robust business logic** with validation and error handling
+- **Seamless Spotify integration** through specialized services
+- **Data synchronization** that keeps our database up-to-date
+- **Scalable design** that can grow with our needs
+
+The architecture is maintainable, testable, and follows industry best practices. It provides a solid foundation for future enhancements.
+
+Thank you. I'm happy to answer any questions."
 
 ---
 
