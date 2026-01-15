@@ -1,0 +1,96 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:latest
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_PASSWORD
+          value: "secret123"
+        - name: POSTGRES_USER
+          value: "postgres"
+        - name: POSTGRES_DB
+          value: "expensedb"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-service
+spec:
+  selector:
+    app: postgres
+  ports:
+  - protocol: TCP
+    port: 5432
+    targetPort: 5432
+  type: LoadBalancer
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: expense-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: expense
+  template:
+    metadata:
+      labels:
+        app: expense
+    spec:
+      initContainers:
+      - name: init-db
+        image: busybox:latest
+        command: ['sh', '-c', 'until nc -z postgres 5432; do sleep 3; done;']
+        env:
+        - name: DB_URL
+          value: "jdbc:postgresql://localhost:5432/expensedb"
+        - name: DB_PASSWORD
+          value: "secret123"
+        - name: DB_USER
+          value: "postgres"
+      containers:
+      - name: expense
+        image: expense-report:two-stage
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DB_URL
+          value: "jdbc:postgresql://localhost:5432/expensedb"
+        - name: JWT_SECRET
+          value: "thisIsMySuperSecretSecuritySecret"
+        - name: DB_PASSWORD
+          value: "secret123"
+        - name: DB_USER
+          value: "postgres"
+        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: expense-service
+spec:
+  selector:
+    app: expense
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+  type: LoadBalancer
+  

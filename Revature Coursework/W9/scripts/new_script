@@ -1,0 +1,130 @@
+#!/usr/bin/env bash
+# Shebang - an indicator to the env of what tool to use to run this file
+
+# this is a comment in bash
+echo "Hello World"
+
+variables() {
+    name="Richard"
+    # if we use spaces around the =, bash will try to treat the name of variable as a command to execute
+    age=35
+
+    echo "Hello $name"
+    echo "Age: ${age}" # you can curly-bracket wrap a variable for readability
+
+    echo "Hello ${name} welcome back"
+    echo "Hello ${name}welcome back"
+
+    current_dir=$(pwd)
+    echo "your current directory is: ${current_dir}"
+
+    echo "your current directory is: $(pwd)"
+
+    # $ bash new_script val1 val2 val3
+    #           $0       $1   $2   $3
+
+    script=$0
+    arg1=$1
+    arg2=$2
+
+    allargs=$@
+    numargs=$#
+
+    echo "${script}"
+    echo "${arg1}"
+    echo "${arg2}"
+    echo "${allargs}"
+    echo "${numargs}"
+
+    # bash for-each syntax
+    echo "for each arg:"
+    for arg in "$@"; do
+        echo " - $arg"
+    done
+}
+
+conditonals() {
+    echo "##########################"
+    echo "Conditonals:"
+
+    # num is EITHER the first positional arg, or the number 5
+    number=${1:-5}
+    echo "${number}"
+
+    # If-Else syntax
+    # Comparison ops: > is -gt , < is  -lt, >= is -ge, <= is -le, = is = (for string comparison) or -eq, != is != (for string comparison) or -ne
+
+    if [ $number -gt 0 ]; then
+        echo "${number} is positive."
+    elif [ $number -lt 0 ]; then
+        echo "${number} is negative."
+    else 
+        echo "${number} is zero."
+    fi 
+
+    name=${2:-"guest"}
+
+    if [ "${name}" = "guest" ]; then
+        echo "Welcome guest!"
+    elif [ "${name}" = "Richard" ]; then
+        echo "He Returns!!"
+    else
+        echo "Welcome ${name}!"
+    fi
+}
+
+loops() {
+    echo "##########################"
+    echo "Loops:"
+
+    for item in apple banana cherries; do
+        echo "I need $item"
+    done
+
+    for i in {1..5}; do
+        echo "count: $i"
+    done
+
+    for ((i=0; i<3; i++)); do
+        echo "index: $i"
+    done
+
+    for arg in "$@"; do # iterate over command line args
+        echo " - $arg"
+    done
+
+    for file in ./../*; do # we've still got relative pathing!
+        echo "found: $file"
+    done
+
+    while [ $number -gt 0 ]; do
+        echo "T-minus $number"
+        number=$((number-1))
+        sleep 0.5
+    done
+}
+
+greet() {
+    echo "Hello function"
+}
+
+custom_greet() {
+    local name=$1
+    echo "Hello ${name}"
+}
+
+custom_exit() {
+    echo "goodbye!"
+}
+
+greet
+custom_greet "Richard"
+#   $0          $1
+
+exit=$( custom_exit )
+echo "printing the return: ${exit}"
+
+docker ps
+
+
+# return 0 # everything worked as intended

@@ -1,0 +1,401 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1767732464264,257,GET All Items,200,,Item Service Load 1-1,text,true,,174,157,1,2,http://localhost:8080/api/items,250,0,25
+1767732464264,422,GET All Users,200,,User Service Load 2-1,text,true,,174,157,2,4,http://localhost:8081/api/users,416,0,25
+1767732465024,81,POST Create Item,201,,Item Service Load 1-1,text,true,,265,263,2,4,http://localhost:8080/api/items,81,0,0
+1767732465150,14,GET All Users,200,,User Service Load 2-2,text,true,,174,157,2,4,http://localhost:8081/api/users,14,0,1
+1767732465144,22,GET All Items,200,,Item Service Load 1-2,text,true,,267,157,2,4,http://localhost:8080/api/items,22,0,1
+1767732465187,130,POST Create User,201,,User Service Load 2-1,text,true,,243,241,2,4,http://localhost:8081/api/users,130,0,0
+1767732465644,20,GET Item by ID,200,,Item Service Load 1-1,text,true,,265,159,3,6,http://localhost:8080/api/items/1,20,0,0
+1767732465666,9,POST Create User,201,,User Service Load 2-2,text,true,,243,241,3,6,http://localhost:8081/api/users,9,0,0
+1767732465667,10,POST Create Item,201,,Item Service Load 1-2,text,true,,265,263,3,6,http://localhost:8080/api/items,9,0,0
+1767732465819,30,GET User by ID,200,,User Service Load 2-1,text,true,,243,159,3,6,http://localhost:8081/api/users/1,28,0,0
+1767732466142,9,GET All Items,200,,Item Service Load 1-3,text,true,,360,157,3,6,http://localhost:8080/api/items,9,0,1
+1767732466149,11,GET All Users,200,,User Service Load 2-3,text,true,,316,157,3,6,http://localhost:8081/api/users,11,0,1
+1767732466165,7,GET Non-existent Item (404),404,,Item Service Load 1-1,,false,,121,163,3,6,http://localhost:8080/api/items/99999,7,0,0
+1767732466176,10,GET User by ID,200,,User Service Load 2-2,text,true,,243,159,3,6,http://localhost:8081/api/users/2,9,0,0
+1767732466177,11,GET Item by ID,200,,Item Service Load 1-2,text,true,,265,159,3,6,http://localhost:8080/api/items/2,10,0,0
+1767732466352,9,GET Non-existent User (404),404,,User Service Load 2-1,,false,,121,163,3,6,http://localhost:8081/api/users/99999,9,0,0
+1767732466652,18,POST Create Item,201,,Item Service Load 1-3,text,true,,265,263,4,8,http://localhost:8080/api/items,17,0,0
+1767732466661,14,POST Create User,201,,User Service Load 2-3,text,true,,243,241,4,8,http://localhost:8081/api/users,13,0,0
+1767732466675,8,GET All Items,200,,Item Service Load 1-1,text,true,,454,157,4,8,http://localhost:8080/api/items,8,0,0
+1767732466688,8,GET Non-existent User (404),404,,User Service Load 2-2,,false,,121,163,4,8,http://localhost:8081/api/users/99999,8,0,0
+1767732466689,8,GET Non-existent Item (404),404,,Item Service Load 1-2,,false,,121,163,4,8,http://localhost:8080/api/items/99999,8,0,0
+1767732466863,12,GET All Users,200,,User Service Load 2-1,text,true,,387,157,4,8,http://localhost:8081/api/users,11,0,0
+1767732467144,11,GET All Items,200,,Item Service Load 1-4,text,true,,454,157,4,8,http://localhost:8080/api/items,10,0,0
+1767732467147,13,GET All Users,200,,User Service Load 2-4,text,true,,387,157,4,8,http://localhost:8081/api/users,12,0,2
+1767732467171,10,GET Item by ID,200,,Item Service Load 1-3,text,true,,265,159,4,8,http://localhost:8080/api/items/3,9,0,0
+1767732467176,10,GET User by ID,200,,User Service Load 2-3,text,true,,243,159,4,8,http://localhost:8081/api/users/3,9,0,0
+1767732467185,10,POST Create Item,201,,Item Service Load 1-1,text,true,,265,263,4,8,http://localhost:8080/api/items,9,0,0
+1767732467198,9,GET All Items,200,,Item Service Load 1-2,text,true,,547,157,4,8,http://localhost:8080/api/items,8,0,0
+1767732467198,9,GET All Users,200,,User Service Load 2-2,text,true,,387,157,4,8,http://localhost:8081/api/users,9,0,0
+1767732467377,11,POST Create User,201,,User Service Load 2-1,text,true,,243,241,4,8,http://localhost:8081/api/users,10,0,0
+1767732467656,11,POST Create Item,201,,Item Service Load 1-4,text,true,,265,263,5,10,http://localhost:8080/api/items,11,0,0
+1767732467661,10,POST Create User,201,,User Service Load 2-4,text,true,,243,241,5,10,http://localhost:8081/api/users,9,0,0
+1767732467682,8,GET Non-existent Item (404),404,,Item Service Load 1-3,,false,,121,163,5,10,http://localhost:8080/api/items/99999,8,0,0
+1767732467687,8,GET Non-existent User (404),404,,User Service Load 2-3,,false,,121,163,5,10,http://localhost:8081/api/users/99999,8,0,0
+1767732467696,9,GET Item by ID,200,,Item Service Load 1-1,text,true,,265,159,5,10,http://localhost:8080/api/items/4,8,0,0
+1767732467708,9,POST Create Item,201,,Item Service Load 1-2,text,true,,265,263,5,10,http://localhost:8080/api/items,9,0,0
+1767732467710,9,POST Create User,201,,User Service Load 2-2,text,true,,243,241,5,10,http://localhost:8081/api/users,9,0,0
+1767732467890,7,GET User by ID,200,,User Service Load 2-1,text,true,,243,159,5,10,http://localhost:8081/api/users/4,7,0,0
+1767732468141,10,GET All Items,200,,Item Service Load 1-5,text,true,,733,157,5,10,http://localhost:8080/api/items,9,0,1
+1767732468148,8,GET All Users,200,,User Service Load 2-5,text,true,,601,157,5,10,http://localhost:8081/api/users,8,0,1
+1767732468169,8,GET Item by ID,200,,Item Service Load 1-4,text,true,,265,159,5,10,http://localhost:8080/api/items/5,8,0,0
+1767732468172,8,GET User by ID,200,,User Service Load 2-4,text,true,,243,159,5,10,http://localhost:8081/api/users/5,7,0,0
+1767732468191,19,GET All Items,200,,Item Service Load 1-3,text,true,,733,157,5,10,http://localhost:8080/api/items,18,0,0
+1767732468196,18,GET All Users,200,,User Service Load 2-3,text,true,,601,157,5,10,http://localhost:8081/api/users,17,0,0
+1767732468205,14,GET Non-existent Item (404),404,,Item Service Load 1-1,,false,,121,163,5,10,http://localhost:8080/api/items/99999,14,0,0
+1767732468218,10,GET Item by ID,200,,Item Service Load 1-2,text,true,,265,159,5,10,http://localhost:8080/api/items/6,10,0,0
+1767732468220,9,GET User by ID,200,,User Service Load 2-2,text,true,,243,159,5,10,http://localhost:8081/api/users/6,8,0,0
+1767732468399,7,GET Non-existent User (404),404,,User Service Load 2-1,,false,,121,163,5,10,http://localhost:8081/api/users/99999,7,0,0
+1767732468652,10,POST Create Item,201,,Item Service Load 1-5,text,true,,265,263,5,10,http://localhost:8080/api/items,10,0,0
+1767732468657,9,POST Create User,201,,User Service Load 2-5,text,true,,243,241,5,10,http://localhost:8081/api/users,9,0,0
+1767732468678,8,GET Non-existent Item (404),404,,Item Service Load 1-4,,false,,121,163,5,10,http://localhost:8080/api/items/99999,8,0,0
+1767732468680,8,GET Non-existent User (404),404,,User Service Load 2-4,,false,,121,163,5,10,http://localhost:8081/api/users/99999,8,0,0
+1767732468711,9,POST Create Item,201,,Item Service Load 1-3,text,true,,265,263,5,10,http://localhost:8080/api/items,9,0,0
+1767732468714,10,POST Create User,201,,User Service Load 2-3,text,true,,243,241,5,10,http://localhost:8081/api/users,9,0,0
+1767732468720,8,GET All Items,200,,Item Service Load 1-1,text,true,,919,157,5,10,http://localhost:8080/api/items,7,0,0
+1767732468729,8,GET Non-existent User (404),404,,User Service Load 2-2,,false,,121,163,5,10,http://localhost:8081/api/users/99999,8,0,0
+1767732468729,8,GET Non-existent Item (404),404,,Item Service Load 1-2,,false,,121,163,5,10,http://localhost:8080/api/items/99999,8,0,0
+1767732468906,9,GET All Users,200,,User Service Load 2-1,text,true,,743,157,5,10,http://localhost:8081/api/users,9,0,0
+1767732469163,8,GET Item by ID,200,,Item Service Load 1-5,text,true,,265,159,5,10,http://localhost:8080/api/items/7,8,0,0
+1767732469168,8,GET User by ID,200,,User Service Load 2-5,text,true,,243,159,5,10,http://localhost:8081/api/users/7,7,0,0
+1767732469187,8,GET All Items,200,,Item Service Load 1-4,text,true,,919,157,5,10,http://localhost:8080/api/items,8,0,0
+1767732469189,10,GET All Users,200,,User Service Load 2-4,text,true,,743,157,5,10,http://localhost:8081/api/users,9,0,0
+1767732469222,8,GET Item by ID,200,,Item Service Load 1-3,text,true,,265,159,5,10,http://localhost:8080/api/items/8,7,0,0
+1767732469226,9,GET User by ID,200,,User Service Load 2-3,text,true,,243,159,5,10,http://localhost:8081/api/users/8,9,0,0
+1767732469229,10,POST Create Item,201,,Item Service Load 1-1,text,true,,265,263,5,10,http://localhost:8080/api/items,10,0,0
+1767732469239,8,GET All Items,200,,Item Service Load 1-2,text,true,,1012,157,5,10,http://localhost:8080/api/items,8,0,0
+1767732469239,9,GET All Users,200,,User Service Load 2-2,text,true,,743,157,5,10,http://localhost:8081/api/users,8,0,0
+1767732469417,10,POST Create User,201,,User Service Load 2-1,text,true,,243,241,5,10,http://localhost:8081/api/users,10,0,0
+1767732469673,8,GET Non-existent Item (404),404,,Item Service Load 1-5,,false,,121,163,5,10,http://localhost:8080/api/items/99999,8,0,0
+1767732469678,8,GET Non-existent User (404),404,,User Service Load 2-5,,false,,121,163,5,10,http://localhost:8081/api/users/99999,8,0,0
+1767732469697,11,POST Create Item,201,,Item Service Load 1-4,text,true,,266,263,5,10,http://localhost:8080/api/items,11,0,0
+1767732469701,10,POST Create User,201,,User Service Load 2-4,text,true,,244,241,5,10,http://localhost:8081/api/users,9,0,0
+1767732469731,9,GET Non-existent Item (404),404,,Item Service Load 1-3,,false,,121,163,5,10,http://localhost:8080/api/items/99999,9,0,0
+1767732469737,7,GET Non-existent User (404),404,,User Service Load 2-3,,false,,121,163,5,10,http://localhost:8081/api/users/99999,7,0,0
+1767732469741,8,GET Item by ID,200,,Item Service Load 1-1,text,true,,265,159,5,10,http://localhost:8080/api/items/9,8,0,0
+1767732469749,9,POST Create Item,201,,Item Service Load 1-2,text,true,,266,263,5,10,http://localhost:8080/api/items,9,0,0
+1767732469749,10,POST Create User,201,,User Service Load 2-2,text,true,,244,241,5,10,http://localhost:8081/api/users,9,0,0
+1767732469929,7,GET User by ID,200,,User Service Load 2-1,text,true,,243,159,5,10,http://localhost:8081/api/users/9,7,0,0
+1767732470183,9,GET All Items,200,,Item Service Load 1-5,text,true,,1200,157,5,10,http://localhost:8080/api/items,8,0,0
+1767732470187,8,GET All Users,200,,User Service Load 2-5,text,true,,958,157,5,10,http://localhost:8081/api/users,8,0,0
+1767732470209,9,GET Item by ID,200,,Item Service Load 1-4,text,true,,266,160,5,10,http://localhost:8080/api/items/10,8,0,0
+1767732470212,10,GET User by ID,200,,User Service Load 2-4,text,true,,244,160,5,10,http://localhost:8081/api/users/10,10,0,0
+1767732470241,7,GET All Items,200,,Item Service Load 1-3,text,true,,1200,157,5,10,http://localhost:8080/api/items,7,0,0
+1767732470246,9,GET All Users,200,,User Service Load 2-3,text,true,,958,157,5,10,http://localhost:8081/api/users,9,0,0
+1767732470251,8,GET Non-existent Item (404),404,,Item Service Load 1-1,,false,,121,163,5,10,http://localhost:8080/api/items/99999,8,0,0
+1767732470260,7,GET Item by ID,200,,Item Service Load 1-2,text,true,,266,160,5,10,http://localhost:8080/api/items/11,6,0,0
+1767732470260,7,GET User by ID,200,,User Service Load 2-2,text,true,,244,160,5,10,http://localhost:8081/api/users/11,6,0,0
+1767732470437,8,GET Non-existent User (404),404,,User Service Load 2-1,,false,,121,163,5,10,http://localhost:8081/api/users/99999,8,0,0
+1767732470694,9,POST Create Item,201,,Item Service Load 1-5,text,true,,266,263,5,10,http://localhost:8080/api/items,9,0,0
+1767732470696,9,POST Create User,201,,User Service Load 2-5,text,true,,244,241,5,10,http://localhost:8081/api/users,8,0,0
+1767732470719,9,GET Non-existent Item (404),404,,Item Service Load 1-4,,false,,121,163,5,10,http://localhost:8080/api/items/99999,9,0,0
+1767732470723,9,GET Non-existent User (404),404,,User Service Load 2-4,,false,,121,163,5,10,http://localhost:8081/api/users/99999,9,0,0
+1767732470749,12,POST Create Item,201,,Item Service Load 1-3,text,true,,266,263,5,10,http://localhost:8080/api/items,11,0,0
+1767732470756,11,POST Create User,201,,User Service Load 2-3,text,true,,244,241,5,10,http://localhost:8081/api/users,10,0,0
+1767732470760,11,GET All Items,200,,Item Service Load 1-1,text,true,,1388,157,5,10,http://localhost:8080/api/items,10,0,0
+1767732470768,9,GET Non-existent Item (404),404,,Item Service Load 1-2,,false,,121,163,5,10,http://localhost:8080/api/items/99999,9,0,0
+1767732470768,9,GET Non-existent User (404),404,,User Service Load 2-2,,false,,121,163,5,10,http://localhost:8081/api/users/99999,9,0,0
+1767732470946,12,GET All Users,200,,User Service Load 2-1,text,true,,1102,157,5,10,http://localhost:8081/api/users,12,0,0
+1767732471205,36,GET Item by ID,200,,Item Service Load 1-5,text,true,,266,160,5,10,http://localhost:8080/api/items/12,34,0,0
+1767732471205,42,GET User by ID,200,,User Service Load 2-5,text,true,,244,160,5,10,http://localhost:8081/api/users/12,34,0,0
+1767732471229,45,GET All Items,200,,Item Service Load 1-4,text,true,,1388,157,5,10,http://localhost:8080/api/items,30,0,0
+1767732471234,47,GET All Users,200,,User Service Load 2-4,text,true,,1102,157,5,10,http://localhost:8081/api/users,40,0,0
+1767732471268,15,GET User by ID,200,,User Service Load 2-3,text,true,,244,160,5,10,http://localhost:8081/api/users/13,15,0,0
+1767732471262,48,GET Item by ID,200,,Item Service Load 1-3,text,true,,266,160,5,10,http://localhost:8080/api/items/13,48,0,0
+1767732471278,51,GET All Items,200,,Item Service Load 1-2,text,true,,1388,157,5,10,http://localhost:8080/api/items,50,0,0
+1767732471272,57,POST Create Item,201,,Item Service Load 1-1,text,true,,266,263,5,10,http://localhost:8080/api/items,56,0,0
+1767732471278,61,GET All Users,200,,User Service Load 2-2,text,true,,1102,157,5,10,http://localhost:8081/api/users,51,0,0
+1767732471459,13,POST Create User,201,,User Service Load 2-1,text,true,,244,241,5,10,http://localhost:8081/api/users,12,0,0
+1767732471742,16,GET Non-existent Item (404),404,,Item Service Load 1-5,,false,,121,163,5,10,http://localhost:8080/api/items/99999,16,0,0
+1767732471749,19,GET Non-existent User (404),404,,User Service Load 2-5,,false,,121,163,5,10,http://localhost:8081/api/users/99999,19,0,0
+1767732471784,13,GET Non-existent User (404),404,,User Service Load 2-3,,false,,121,163,5,10,http://localhost:8081/api/users/99999,13,0,0
+1767732471776,21,POST Create Item,201,,Item Service Load 1-4,text,true,,266,263,5,10,http://localhost:8080/api/items,21,0,0
+1767732471783,18,POST Create User,201,,User Service Load 2-4,text,true,,244,241,5,10,http://localhost:8081/api/users,17,0,0
+1767732471811,10,GET Non-existent Item (404),404,,Item Service Load 1-3,,false,,121,163,5,10,http://localhost:8080/api/items/99999,10,0,0
+1767732471830,9,GET Item by ID,200,,Item Service Load 1-1,text,true,,266,160,5,10,http://localhost:8080/api/items/14,9,0,0
+1767732471830,14,POST Create Item,201,,Item Service Load 1-2,text,true,,266,263,5,10,http://localhost:8080/api/items,13,0,0
+1767732471840,15,POST Create User,201,,User Service Load 2-2,text,true,,244,241,5,10,http://localhost:8081/api/users,14,0,0
+1767732471973,15,GET User by ID,200,,User Service Load 2-1,text,true,,244,160,5,10,http://localhost:8081/api/users/14,14,0,0
+1767732472259,14,GET All Items,200,,Item Service Load 1-5,text,true,,1670,157,5,10,http://localhost:8080/api/items,12,0,0
+1767732472270,13,GET All Users,200,,User Service Load 2-5,text,true,,1318,157,5,10,http://localhost:8081/api/users,12,0,0
+1767732472298,10,GET Item by ID,200,,Item Service Load 1-4,text,true,,266,160,5,10,http://localhost:8080/api/items/15,10,0,0
+1767732472298,12,GET All Users,200,,User Service Load 2-3,text,true,,1318,157,5,10,http://localhost:8081/api/users,11,0,0
+1767732472303,10,GET User by ID,200,,User Service Load 2-4,text,true,,244,160,5,10,http://localhost:8081/api/users/15,10,0,0
+1767732472322,10,GET All Items,200,,Item Service Load 1-3,text,true,,1670,157,5,10,http://localhost:8080/api/items,9,0,0
+1767732472341,8,GET Non-existent Item (404),404,,Item Service Load 1-1,,false,,121,163,5,10,http://localhost:8080/api/items/99999,8,0,0
+1767732472345,7,GET Item by ID,200,,Item Service Load 1-2,text,true,,266,160,5,10,http://localhost:8080/api/items/16,6,0,0
+1767732472357,8,GET User by ID,200,,User Service Load 2-2,text,true,,244,160,5,10,http://localhost:8081/api/users/16,8,0,0
+1767732472489,11,GET Non-existent User (404),404,,User Service Load 2-1,,false,,121,163,5,10,http://localhost:8081/api/users/99999,11,0,0
+1767732472774,13,POST Create Item,201,,Item Service Load 1-5,text,true,,266,263,5,10,http://localhost:8080/api/items,13,0,0
+1767732472784,10,POST Create User,201,,User Service Load 2-5,text,true,,244,241,5,10,http://localhost:8081/api/users,10,0,0
+1767732472809,8,GET Non-existent Item (404),404,,Item Service Load 1-4,,false,,121,163,5,10,http://localhost:8080/api/items/99999,8,0,0
+1767732472814,10,GET Non-existent User (404),404,,User Service Load 2-4,,false,,121,163,5,10,http://localhost:8081/api/users/99999,10,0,0
+1767732472811,13,POST Create User,201,,User Service Load 2-3,text,true,,244,241,5,10,http://localhost:8081/api/users,13,0,0
+1767732472833,9,POST Create Item,201,,Item Service Load 1-3,text,true,,266,263,5,10,http://localhost:8080/api/items,9,0,0
+1767732472852,6,GET Non-existent Item (404),404,,Item Service Load 1-2,,false,,121,163,5,10,http://localhost:8080/api/items/99999,6,0,0
+1767732472851,8,GET All Items,200,,Item Service Load 1-1,text,true,,1858,157,5,10,http://localhost:8080/api/items,8,0,0
+1767732472867,8,GET Non-existent User (404),404,,User Service Load 2-2,,false,,121,163,5,10,http://localhost:8081/api/users/99999,8,0,0
+1767732473001,9,GET All Users,200,,User Service Load 2-1,text,true,,1462,157,5,10,http://localhost:8081/api/users,8,0,0
+1767732473289,10,GET Item by ID,200,,Item Service Load 1-5,text,true,,266,160,5,10,http://localhost:8080/api/items/17,9,0,0
+1767732473295,11,GET User by ID,200,,User Service Load 2-5,text,true,,244,160,5,10,http://localhost:8081/api/users/17,10,0,0
+1767732473318,10,GET All Items,200,,Item Service Load 1-4,text,true,,1858,157,5,10,http://localhost:8080/api/items,9,0,0
+1767732473326,8,GET User by ID,200,,User Service Load 2-3,text,true,,244,160,5,10,http://localhost:8081/api/users/18,7,0,0
+1767732473326,10,GET All Users,200,,User Service Load 2-4,text,true,,1462,157,5,10,http://localhost:8081/api/users,10,0,0
+1767732473344,11,GET Item by ID,200,,Item Service Load 1-3,text,true,,266,160,5,10,http://localhost:8080/api/items/18,10,0,0
+1767732473359,16,GET All Items,200,,Item Service Load 1-2,text,true,,1858,157,5,10,http://localhost:8080/api/items,16,0,0
+1767732473360,19,POST Create Item,201,,Item Service Load 1-1,text,true,,266,263,5,10,http://localhost:8080/api/items,17,0,0
+1767732473376,16,GET All Users,200,,User Service Load 2-2,text,true,,1462,157,5,10,http://localhost:8081/api/users,15,0,0
+1767732473510,12,POST Create User,201,,User Service Load 2-1,text,true,,244,241,5,10,http://localhost:8081/api/users,11,0,0
+1767732473800,5,GET Non-existent Item (404),404,,Item Service Load 1-5,,false,,121,163,5,10,http://localhost:8080/api/items/99999,5,0,0
+1767732473807,6,GET Non-existent User (404),404,,User Service Load 2-5,,false,,121,163,5,10,http://localhost:8081/api/users/99999,6,0,0
+1767732473829,16,POST Create Item,201,,Item Service Load 1-4,text,true,,266,263,5,10,http://localhost:8080/api/items,15,0,0
+1767732473835,10,GET Non-existent User (404),404,,User Service Load 2-3,,false,,121,163,5,10,http://localhost:8081/api/users/99999,10,0,0
+1767732473838,12,POST Create User,201,,User Service Load 2-4,text,true,,244,241,5,10,http://localhost:8081/api/users,11,0,0
+1767732473856,6,GET Non-existent Item (404),404,,Item Service Load 1-3,,false,,121,163,5,10,http://localhost:8080/api/items/99999,6,0,0
+1767732473881,5,GET Item by ID,200,,Item Service Load 1-1,text,true,,266,160,5,10,http://localhost:8080/api/items/19,4,0,0
+1767732473876,10,POST Create Item,201,,Item Service Load 1-2,text,true,,266,263,5,10,http://localhost:8080/api/items,9,0,0
+1767732473892,8,POST Create User,201,,User Service Load 2-2,text,true,,244,241,5,10,http://localhost:8081/api/users,8,0,0
+1767732474024,6,GET User by ID,200,,User Service Load 2-1,text,true,,244,160,5,10,http://localhost:8081/api/users/19,6,0,0
+1767732474307,9,GET All Items,200,,Item Service Load 1-5,text,true,,2140,157,5,10,http://localhost:8080/api/items,9,0,0
+1767732474315,9,GET All Users,200,,User Service Load 2-5,text,true,,1678,157,5,10,http://localhost:8081/api/users,9,0,0
+1767732474347,15,GET Item by ID,200,,Item Service Load 1-4,text,true,,266,160,5,10,http://localhost:8080/api/items/20,15,0,0
+1767732474347,15,GET All Users,200,,User Service Load 2-3,text,true,,1678,157,5,10,http://localhost:8081/api/users,15,0,0
+1767732474351,16,GET User by ID,200,,User Service Load 2-4,text,true,,244,160,5,10,http://localhost:8081/api/users/20,14,0,0
+1767732474363,22,GET All Items,200,,Item Service Load 1-3,text,true,,2140,157,5,10,http://localhost:8080/api/items,21,0,0
+1767732474387,10,GET Non-existent Item (404),404,,Item Service Load 1-1,,false,,121,163,5,10,http://localhost:8080/api/items/99999,10,0,0
+1767732474387,11,GET Item by ID,200,,Item Service Load 1-2,text,true,,266,160,5,10,http://localhost:8080/api/items/21,10,0,0
+1767732474401,9,GET User by ID,200,,User Service Load 2-2,text,true,,244,160,5,10,http://localhost:8081/api/users/21,9,0,0
+1767732474531,7,GET Non-existent User (404),404,,User Service Load 2-1,,false,,121,163,5,10,http://localhost:8081/api/users/99999,7,0,0
+1767732474817,15,POST Create Item,201,,Item Service Load 1-5,text,true,,266,263,5,10,http://localhost:8080/api/items,15,0,0
+1767732474825,10,POST Create User,201,,User Service Load 2-5,text,true,,244,241,5,10,http://localhost:8081/api/users,9,0,0
+1767732474863,8,GET Non-existent Item (404),404,,Item Service Load 1-4,,false,,121,163,5,10,http://localhost:8080/api/items/99999,8,0,0
+1767732474863,10,POST Create User,201,,User Service Load 2-3,text,true,,244,241,5,10,http://localhost:8081/api/users,10,0,0
+1767732474870,7,GET Non-existent User (404),404,,User Service Load 2-4,,false,,121,163,5,10,http://localhost:8081/api/users/99999,7,0,0
+1767732474886,8,POST Create Item,201,,Item Service Load 1-3,text,true,,266,263,5,10,http://localhost:8080/api/items,8,0,0
+1767732474898,5,GET Non-existent Item (404),404,,Item Service Load 1-2,,false,,121,163,5,10,http://localhost:8080/api/items/99999,5,0,0
+1767732474898,7,GET All Items,200,,Item Service Load 1-1,text,true,,2328,157,5,10,http://localhost:8080/api/items,7,0,0
+1767732474911,7,GET Non-existent User (404),404,,User Service Load 2-2,,false,,121,163,5,10,http://localhost:8081/api/users/99999,7,0,0
+1767732475039,10,GET All Users,200,,User Service Load 2-1,text,true,,1822,157,5,10,http://localhost:8081/api/users,9,0,0
+1767732475335,7,GET User by ID,200,,User Service Load 2-5,text,true,,244,160,5,10,http://localhost:8081/api/users/22,7,0,0
+1767732475334,8,GET Item by ID,200,,Item Service Load 1-5,text,true,,266,160,5,10,http://localhost:8080/api/items/22,8,0,0
+1767732475373,11,GET All Items,200,,Item Service Load 1-4,text,true,,2328,157,5,10,http://localhost:8080/api/items,9,0,0
+1767732475375,9,GET User by ID,200,,User Service Load 2-3,text,true,,244,160,5,10,http://localhost:8081/api/users/23,9,0,0
+1767732475379,11,GET All Users,200,,User Service Load 2-4,text,true,,1822,157,5,10,http://localhost:8081/api/users,11,0,0
+1767732475395,8,GET Item by ID,200,,Item Service Load 1-3,text,true,,266,160,5,10,http://localhost:8080/api/items/23,8,0,0
+1767732475405,10,GET All Items,200,,Item Service Load 1-2,text,true,,2328,157,5,10,http://localhost:8080/api/items,10,0,0
+1767732475406,9,POST Create Item,201,,Item Service Load 1-1,text,true,,266,263,5,10,http://localhost:8080/api/items,9,0,0
+1767732475419,10,GET All Users,200,,User Service Load 2-2,text,true,,1822,157,5,10,http://localhost:8081/api/users,10,0,0
+1767732475550,8,POST Create User,201,,User Service Load 2-1,text,true,,244,241,5,10,http://localhost:8081/api/users,8,0,0
+1767732475843,7,GET Non-existent User (404),404,,User Service Load 2-5,,false,,121,163,5,10,http://localhost:8081/api/users/99999,7,0,0
+1767732475843,7,GET Non-existent Item (404),404,,Item Service Load 1-5,,false,,121,163,5,10,http://localhost:8080/api/items/99999,7,0,0
+1767732475884,10,GET Non-existent User (404),404,,User Service Load 2-3,,false,,121,163,5,10,http://localhost:8081/api/users/99999,10,0,0
+1767732475885,15,POST Create Item,201,,Item Service Load 1-4,text,true,,266,263,5,10,http://localhost:8080/api/items,15,0,0
+1767732475891,11,POST Create User,201,,User Service Load 2-4,text,true,,244,241,5,10,http://localhost:8081/api/users,11,0,0
+1767732475905,8,GET Non-existent Item (404),404,,Item Service Load 1-3,,false,,121,163,5,10,http://localhost:8080/api/items/99999,8,0,0
+1767732475917,6,GET Item by ID,200,,Item Service Load 1-1,text,true,,266,160,5,10,http://localhost:8080/api/items/24,6,0,0
+1767732475917,8,POST Create Item,201,,Item Service Load 1-2,text,true,,266,263,5,10,http://localhost:8080/api/items,8,0,0
+1767732475929,8,POST Create User,201,,User Service Load 2-2,text,true,,244,241,5,10,http://localhost:8081/api/users,7,0,0
+1767732476059,6,GET User by ID,200,,User Service Load 2-1,text,true,,244,160,5,10,http://localhost:8081/api/users/24,6,0,0
+1767732476351,10,GET All Items,200,,Item Service Load 1-5,text,true,,2610,157,5,10,http://localhost:8080/api/items,9,0,0
+1767732476351,10,GET All Users,200,,User Service Load 2-5,text,true,,2038,157,5,10,http://localhost:8081/api/users,10,0,0
+1767732476395,11,GET All Users,200,,User Service Load 2-3,text,true,,2038,157,5,10,http://localhost:8081/api/users,11,0,0
+1767732476402,7,GET Item by ID,200,,Item Service Load 1-4,text,true,,266,160,5,10,http://localhost:8080/api/items/25,7,0,0
+1767732476405,8,GET User by ID,200,,User Service Load 2-4,text,true,,244,160,5,10,http://localhost:8081/api/users/25,8,0,0
+1767732476414,9,GET All Items,200,,Item Service Load 1-3,text,true,,2610,157,5,10,http://localhost:8080/api/items,9,0,0
+1767732476424,7,GET Non-existent Item (404),404,,Item Service Load 1-1,,false,,121,163,5,10,http://localhost:8080/api/items/99999,7,0,0
+1767732476426,7,GET Item by ID,200,,Item Service Load 1-2,text,true,,266,160,5,10,http://localhost:8080/api/items/26,7,0,0
+1767732476437,7,GET User by ID,200,,User Service Load 2-2,text,true,,244,160,5,10,http://localhost:8081/api/users/26,6,0,0
+1767732476567,6,GET Non-existent User (404),404,,User Service Load 2-1,,false,,121,163,5,10,http://localhost:8081/api/users/99999,6,0,0
+1767732476862,9,POST Create User,201,,User Service Load 2-5,text,true,,244,241,5,10,http://localhost:8081/api/users,9,0,0
+1767732476862,10,POST Create Item,201,,Item Service Load 1-5,text,true,,266,263,5,10,http://localhost:8080/api/items,9,0,0
+1767732476908,9,POST Create User,201,,User Service Load 2-3,text,true,,244,241,5,10,http://localhost:8081/api/users,9,0,0
+1767732476910,8,GET Non-existent Item (404),404,,Item Service Load 1-4,,false,,121,163,5,10,http://localhost:8080/api/items/99999,8,0,0
+1767732476914,7,GET Non-existent User (404),404,,User Service Load 2-4,,false,,121,163,5,10,http://localhost:8081/api/users/99999,7,0,0
+1767732476924,12,POST Create Item,201,,Item Service Load 1-3,text,true,,266,263,5,10,http://localhost:8080/api/items,11,0,0
+1767732476935,9,GET Non-existent Item (404),404,,Item Service Load 1-2,,false,,121,163,5,10,http://localhost:8080/api/items/99999,9,0,0
+1767732476932,14,GET All Items,200,,Item Service Load 1-1,text,true,,2798,157,5,10,http://localhost:8080/api/items,13,0,0
+1767732476945,7,GET Non-existent User (404),404,,User Service Load 2-2,,false,,121,163,5,10,http://localhost:8081/api/users/99999,7,0,0
+1767732477075,10,GET All Users,200,,User Service Load 2-1,text,true,,2182,157,5,10,http://localhost:8081/api/users,9,0,0
+1767732477372,9,GET User by ID,200,,User Service Load 2-5,text,true,,244,160,5,10,http://localhost:8081/api/users/27,9,0,0
+1767732477373,8,GET Item by ID,200,,Item Service Load 1-5,text,true,,266,160,5,10,http://localhost:8080/api/items/27,7,0,0
+1767732477418,9,GET User by ID,200,,User Service Load 2-3,text,true,,244,160,5,10,http://localhost:8081/api/users/28,8,0,0
+1767732477419,11,GET All Items,200,,Item Service Load 1-4,text,true,,2798,157,5,10,http://localhost:8080/api/items,10,0,0
+1767732477423,11,GET All Users,200,,User Service Load 2-4,text,true,,2182,157,5,10,http://localhost:8081/api/users,9,0,0
+1767732477438,7,GET Item by ID,200,,Item Service Load 1-3,text,true,,266,160,5,10,http://localhost:8080/api/items/28,7,0,0
+1767732477445,8,GET All Items,200,,Item Service Load 1-2,text,true,,2798,157,5,10,http://localhost:8080/api/items,8,0,0
+1767732477447,10,POST Create Item,201,,Item Service Load 1-1,text,true,,266,263,5,10,http://localhost:8080/api/items,9,0,0
+1767732477453,9,GET All Users,200,,User Service Load 2-2,text,true,,2182,157,5,10,http://localhost:8081/api/users,9,0,0
+1767732477586,9,POST Create User,201,,User Service Load 2-1,text,true,,244,241,5,10,http://localhost:8081/api/users,9,0,0
+1767732477881,9,GET Non-existent Item (404),404,,Item Service Load 1-5,,false,,121,163,5,10,http://localhost:8080/api/items/99999,9,0,0
+1767732477881,9,GET Non-existent User (404),404,,User Service Load 2-5,,false,,121,163,5,10,http://localhost:8081/api/users/99999,9,0,0
+1767732477929,7,GET Non-existent User (404),404,,User Service Load 2-3,,false,,121,163,5,10,http://localhost:8081/api/users/99999,7,0,0
+1767732477931,8,POST Create Item,201,,Item Service Load 1-4,text,true,,266,263,5,10,http://localhost:8080/api/items,8,0,0
+1767732477936,9,POST Create User,201,,User Service Load 2-4,text,true,,244,241,5,10,http://localhost:8081/api/users,8,0,0
+1767732477946,6,GET Non-existent Item (404),404,,Item Service Load 1-3,,false,,121,163,5,10,http://localhost:8080/api/items/99999,6,0,0
+1767732477957,6,GET Item by ID,200,,Item Service Load 1-1,text,true,,266,160,5,10,http://localhost:8080/api/items/29,6,0,0
+1767732477954,9,POST Create Item,201,,Item Service Load 1-2,text,true,,266,263,5,10,http://localhost:8080/api/items,9,0,0
+1767732477963,8,POST Create User,201,,User Service Load 2-2,text,true,,244,241,5,10,http://localhost:8081/api/users,8,0,0
+1767732478096,7,GET User by ID,200,,User Service Load 2-1,text,true,,244,160,5,10,http://localhost:8081/api/users/29,7,0,0
+1767732478391,11,GET All Items,200,,Item Service Load 1-5,text,true,,3080,157,5,10,http://localhost:8080/api/items,11,0,0
+1767732478391,13,GET All Users,200,,User Service Load 2-5,text,true,,2398,157,5,10,http://localhost:8081/api/users,11,0,0
+1767732478437,8,GET All Users,200,,User Service Load 2-3,text,true,,2398,157,5,10,http://localhost:8081/api/users,8,0,0
+1767732478442,7,GET Item by ID,200,,Item Service Load 1-4,text,true,,266,160,5,10,http://localhost:8080/api/items/30,7,0,0
+1767732478445,7,GET User by ID,200,,User Service Load 2-4,text,true,,244,160,5,10,http://localhost:8081/api/users/30,7,0,0
+1767732478453,7,GET All Items,200,,Item Service Load 1-3,text,true,,3080,157,5,10,http://localhost:8080/api/items,7,0,0
+1767732478464,5,GET Non-existent Item (404),404,,Item Service Load 1-1,,false,,121,163,5,10,http://localhost:8080/api/items/99999,5,0,0
+1767732478463,7,GET Item by ID,200,,Item Service Load 1-2,text,true,,266,160,5,10,http://localhost:8080/api/items/31,6,0,0
+1767732478473,7,GET User by ID,200,,User Service Load 2-2,text,true,,244,160,5,10,http://localhost:8081/api/users/31,7,0,0
+1767732478604,7,GET Non-existent User (404),404,,User Service Load 2-1,,false,,121,163,5,10,http://localhost:8081/api/users/99999,7,0,0
+1767732478904,16,POST Create Item,201,,Item Service Load 1-5,text,true,,266,263,5,10,http://localhost:8080/api/items,15,0,0
+1767732478905,16,POST Create User,201,,User Service Load 2-5,text,true,,244,241,5,10,http://localhost:8081/api/users,15,0,0
+1767732478949,10,GET Non-existent Item (404),404,,Item Service Load 1-4,,false,,121,163,5,10,http://localhost:8080/api/items/99999,10,0,0
+1767732478947,12,POST Create User,201,,User Service Load 2-3,text,true,,244,241,5,10,http://localhost:8081/api/users,12,0,0
+1767732478953,9,GET Non-existent User (404),404,,User Service Load 2-4,,false,,121,163,5,10,http://localhost:8081/api/users/99999,9,0,0
+1767732478961,9,POST Create Item,201,,Item Service Load 1-3,text,true,,266,263,5,10,http://localhost:8080/api/items,9,0,0
+1767732478970,8,GET Non-existent Item (404),404,,Item Service Load 1-2,,false,,121,163,5,10,http://localhost:8080/api/items/99999,8,0,0
+1767732478970,9,GET All Items,200,,Item Service Load 1-1,text,true,,3268,157,5,10,http://localhost:8080/api/items,9,0,0
+1767732478981,9,GET Non-existent User (404),404,,User Service Load 2-2,,false,,121,163,5,10,http://localhost:8081/api/users/99999,9,0,0
+1767732479113,8,GET All Users,200,,User Service Load 2-1,text,true,,2542,157,5,10,http://localhost:8081/api/users,8,0,0
+1767732479422,8,GET Item by ID,200,,Item Service Load 1-5,text,true,,266,160,5,10,http://localhost:8080/api/items/32,7,0,0
+1767732479422,8,GET User by ID,200,,User Service Load 2-5,text,true,,244,160,5,10,http://localhost:8081/api/users/32,7,0,0
+1767732479460,9,GET User by ID,200,,User Service Load 2-3,text,true,,244,160,5,10,http://localhost:8081/api/users/33,9,0,0
+1767732479460,11,GET All Items,200,,Item Service Load 1-4,text,true,,3268,157,5,10,http://localhost:8080/api/items,10,0,0
+1767732479463,10,GET All Users,200,,User Service Load 2-4,text,true,,2542,157,5,10,http://localhost:8081/api/users,10,0,0
+1767732479472,7,GET Item by ID,200,,Item Service Load 1-3,text,true,,266,160,5,10,http://localhost:8080/api/items/33,7,0,0
+1767732479479,8,GET All Items,200,,Item Service Load 1-2,text,true,,3268,157,5,10,http://localhost:8080/api/items,8,0,0
+1767732479480,7,POST Create Item,201,,Item Service Load 1-1,text,true,,266,263,5,10,http://localhost:8080/api/items,7,0,0
+1767732479491,8,GET All Users,200,,User Service Load 2-2,text,true,,2542,157,5,10,http://localhost:8081/api/users,8,0,0
+1767732479622,10,POST Create User,201,,User Service Load 2-1,text,true,,244,241,5,10,http://localhost:8081/api/users,10,0,0
+1767732479930,7,GET Non-existent User (404),404,,User Service Load 2-5,,false,,121,163,5,10,http://localhost:8081/api/users/99999,7,0,0
+1767732479930,7,GET Non-existent Item (404),404,,Item Service Load 1-5,,false,,121,163,5,10,http://localhost:8080/api/items/99999,7,0,0
+1767732479971,9,GET Non-existent User (404),404,,User Service Load 2-3,,false,,121,163,5,10,http://localhost:8081/api/users/99999,9,0,0
+1767732479980,8,GET Non-existent Item (404),404,,Item Service Load 1-3,,false,,121,163,5,10,http://localhost:8080/api/items/99999,8,0,0
+1767732479973,21,POST Create Item,201,,Item Service Load 1-4,text,true,,266,263,5,10,http://localhost:8080/api/items,21,0,0
+1767732479974,20,POST Create User,201,,User Service Load 2-4,text,true,,244,241,5,10,http://localhost:8081/api/users,20,0,0
+1767732479988,8,GET Item by ID,200,,Item Service Load 1-1,text,true,,266,160,5,10,http://localhost:8080/api/items/34,8,0,0
+1767732479988,9,POST Create Item,201,,Item Service Load 1-2,text,true,,266,263,5,10,http://localhost:8080/api/items,9,0,0
+1767732480000,7,POST Create User,201,,User Service Load 2-2,text,true,,244,241,5,10,http://localhost:8081/api/users,7,0,0
+1767732480133,8,GET User by ID,200,,User Service Load 2-1,text,true,,244,160,5,10,http://localhost:8081/api/users/34,8,0,0
+1767732480437,8,GET All Users,200,,User Service Load 2-5,text,true,,2758,157,5,10,http://localhost:8081/api/users,8,0,0
+1767732480438,9,GET All Items,200,,Item Service Load 1-5,text,true,,3550,157,5,10,http://localhost:8080/api/items,9,0,0
+1767732480482,7,GET All Users,200,,User Service Load 2-3,text,true,,2758,157,5,10,http://localhost:8081/api/users,7,0,0
+1767732480489,11,GET All Items,200,,Item Service Load 1-3,text,true,,3550,157,5,10,http://localhost:8080/api/items,9,0,0
+1767732480497,5,GET Non-existent Item (404),404,,Item Service Load 1-1,,false,,121,163,5,10,http://localhost:8080/api/items/99999,5,0,0
+1767732480495,8,GET Item by ID,200,,Item Service Load 1-4,text,true,,266,160,5,10,http://localhost:8080/api/items/35,7,0,0
+1767732480496,10,GET User by ID,200,,User Service Load 2-4,text,true,,244,160,5,10,http://localhost:8081/api/users/35,9,0,0
+1767732480498,12,GET Item by ID,200,,Item Service Load 1-2,text,true,,266,160,5,10,http://localhost:8080/api/items/36,11,0,0
+1767732480512,9,GET User by ID,200,,User Service Load 2-2,text,true,,244,160,5,10,http://localhost:8081/api/users/36,8,0,0
+1767732480642,6,GET Non-existent User (404),404,,User Service Load 2-1,,false,,121,163,5,10,http://localhost:8081/api/users/99999,6,0,0
+1767732480947,10,POST Create User,201,,User Service Load 2-5,text,true,,244,241,5,10,http://localhost:8081/api/users,10,0,0
+1767732480948,11,POST Create Item,201,,Item Service Load 1-5,text,true,,266,263,5,10,http://localhost:8080/api/items,10,0,0
+1767732480990,8,POST Create User,201,,User Service Load 2-3,text,true,,244,241,5,10,http://localhost:8081/api/users,8,0,0
+1767732481003,6,GET Non-existent Item (404),404,,Item Service Load 1-4,,false,,121,163,5,10,http://localhost:8080/api/items/99999,6,0,0
+1767732481003,6,GET All Items,200,,Item Service Load 1-1,text,true,,3644,157,5,10,http://localhost:8080/api/items,6,0,0
+1767732481001,8,POST Create Item,201,,Item Service Load 1-3,text,true,,266,263,5,10,http://localhost:8080/api/items,8,0,0
+1767732481007,6,GET Non-existent User (404),404,,User Service Load 2-4,,false,,121,163,5,10,http://localhost:8081/api/users/99999,6,0,0
+1767732481012,6,GET Non-existent Item (404),404,,Item Service Load 1-2,,false,,121,163,5,10,http://localhost:8080/api/items/99999,6,0,0
+1767732481021,6,GET Non-existent User (404),404,,User Service Load 2-2,,false,,121,163,5,10,http://localhost:8081/api/users/99999,6,0,0
+1767732481149,7,GET All Users,200,,User Service Load 2-1,text,true,,2902,157,5,10,http://localhost:8081/api/users,7,0,0
+1767732481459,8,GET User by ID,200,,User Service Load 2-5,text,true,,244,160,5,10,http://localhost:8081/api/users/37,8,0,0
+1767732481460,8,GET Item by ID,200,,Item Service Load 1-5,text,true,,266,160,5,10,http://localhost:8080/api/items/37,7,0,0
+1767732481499,6,GET User by ID,200,,User Service Load 2-3,text,true,,244,160,5,10,http://localhost:8081/api/users/38,6,0,0
+1767732481510,6,GET Item by ID,200,,Item Service Load 1-3,text,true,,266,160,5,10,http://localhost:8080/api/items/38,6,0,0
+1767732481509,7,GET All Items,200,,Item Service Load 1-4,text,true,,3738,157,5,10,http://localhost:8080/api/items,7,0,0
+1767732481509,7,POST Create Item,201,,Item Service Load 1-1,text,true,,266,263,5,10,http://localhost:8080/api/items,7,0,0
+1767732481514,9,GET All Users,200,,User Service Load 2-4,text,true,,2902,157,5,10,http://localhost:8081/api/users,9,0,0
+1767732481519,8,GET All Items,200,,Item Service Load 1-2,text,true,,3832,157,5,10,http://localhost:8080/api/items,8,0,0
+1767732481528,7,GET All Users,200,,User Service Load 2-2,text,true,,2902,157,5,10,http://localhost:8081/api/users,7,0,0
+1767732481657,7,POST Create User,201,,User Service Load 2-1,text,true,,244,241,5,10,http://localhost:8081/api/users,6,0,0
+1767732481968,6,GET Non-existent User (404),404,,User Service Load 2-5,,false,,121,163,5,10,http://localhost:8081/api/users/99999,6,0,0
+1767732481970,6,GET Non-existent Item (404),404,,Item Service Load 1-5,,false,,121,163,5,10,http://localhost:8080/api/items/99999,6,0,0
+1767732482006,8,GET Non-existent User (404),404,,User Service Load 2-3,,false,,121,163,5,10,http://localhost:8081/api/users/99999,8,0,0
+1767732482017,7,GET Non-existent Item (404),404,,Item Service Load 1-3,,false,,121,163,5,10,http://localhost:8080/api/items/99999,6,0,0
+1767732482017,8,GET Item by ID,200,,Item Service Load 1-1,text,true,,266,160,5,10,http://localhost:8080/api/items/39,8,0,0
+1767732482017,13,POST Create Item,201,,Item Service Load 1-4,text,true,,266,263,5,10,http://localhost:8080/api/items,13,0,0
+1767732482024,11,POST Create User,201,,User Service Load 2-4,text,true,,244,241,5,10,http://localhost:8081/api/users,11,0,0
+1767732482028,12,POST Create Item,201,,Item Service Load 1-2,text,true,,266,263,5,10,http://localhost:8080/api/items,11,0,0
+1767732482036,11,POST Create User,201,,User Service Load 2-2,text,true,,244,241,5,10,http://localhost:8081/api/users,11,0,0
+1767732482164,6,GET User by ID,200,,User Service Load 2-1,text,true,,244,160,5,10,http://localhost:8081/api/users/39,6,0,0
+1767732482476,9,GET All Users,200,,User Service Load 2-5,text,true,,3118,157,5,10,http://localhost:8081/api/users,9,0,0
+1767732482477,9,GET All Items,200,,Item Service Load 1-5,text,true,,4020,157,5,10,http://localhost:8080/api/items,9,0,0
+1767732482514,10,GET All Users,200,,User Service Load 2-3,text,true,,3118,157,5,10,http://localhost:8081/api/users,10,0,0
+1767732482526,5,GET Non-existent Item (404),404,,Item Service Load 1-1,,false,,121,163,5,10,http://localhost:8080/api/items/99999,5,0,0
+1767732482524,7,GET All Items,200,,Item Service Load 1-3,text,true,,4020,157,5,10,http://localhost:8080/api/items,7,0,0
+1767732482532,8,GET Item by ID,200,,Item Service Load 1-4,text,true,,266,160,5,10,http://localhost:8080/api/items/40,7,0,0
+1767732482537,7,GET User by ID,200,,User Service Load 2-4,text,true,,244,160,5,10,http://localhost:8081/api/users/40,6,0,0
+1767732482540,6,GET Item by ID,200,,Item Service Load 1-2,text,true,,266,160,5,10,http://localhost:8080/api/items/41,6,0,0
+1767732482548,5,GET User by ID,200,,User Service Load 2-2,text,true,,244,160,5,10,http://localhost:8081/api/users/41,5,0,0
+1767732482671,7,GET Non-existent User (404),404,,User Service Load 2-1,,false,,121,163,5,10,http://localhost:8081/api/users/99999,7,0,0
+1767732482987,12,POST Create User,201,,User Service Load 2-5,text,true,,244,241,5,10,http://localhost:8081/api/users,11,0,0
+1767732482987,13,POST Create Item,201,,Item Service Load 1-5,text,true,,266,263,5,10,http://localhost:8080/api/items,12,0,0
+1767732483025,8,POST Create User,201,,User Service Load 2-3,text,true,,244,241,5,10,http://localhost:8081/api/users,8,0,0
+1767732483032,6,GET All Items,200,,Item Service Load 1-1,text,true,,4114,157,5,10,http://localhost:8080/api/items,6,0,0
+1767732483032,6,POST Create Item,201,,Item Service Load 1-3,text,true,,266,263,5,10,http://localhost:8080/api/items,6,0,0
+1767732483040,7,GET Non-existent Item (404),404,,Item Service Load 1-4,,false,,121,163,5,10,http://localhost:8080/api/items/99999,7,0,0
+1767732483045,6,GET Non-existent User (404),404,,User Service Load 2-4,,false,,121,163,5,10,http://localhost:8081/api/users/99999,6,0,0
+1767732483047,5,GET Non-existent Item (404),404,,Item Service Load 1-2,,false,,121,163,5,10,http://localhost:8080/api/items/99999,5,0,0
+1767732483053,6,GET Non-existent User (404),404,,User Service Load 2-2,,false,,121,163,5,10,http://localhost:8081/api/users/99999,6,0,0
+1767732483179,7,GET All Users,200,,User Service Load 2-1,text,true,,3262,157,5,10,http://localhost:8081/api/users,7,0,0
+1767732483500,7,GET Item by ID,200,,Item Service Load 1-5,text,true,,266,160,5,10,http://localhost:8080/api/items/42,7,0,0
+1767732483500,7,GET User by ID,200,,User Service Load 2-5,text,true,,244,160,5,10,http://localhost:8081/api/users/42,7,0,0
+1767732483534,9,GET User by ID,200,,User Service Load 2-3,text,true,,244,160,5,10,http://localhost:8081/api/users/43,8,0,0
+1767732483540,6,GET Item by ID,200,,Item Service Load 1-3,text,true,,266,160,5,10,http://localhost:8080/api/items/43,6,0,0
+1767732483540,7,POST Create Item,201,,Item Service Load 1-1,text,true,,267,264,5,10,http://localhost:8080/api/items,7,0,0
+1767732483548,8,GET All Items,200,,Item Service Load 1-4,text,true,,4304,157,5,10,http://localhost:8080/api/items,8,0,0
+1767732483551,10,GET All Users,200,,User Service Load 2-4,text,true,,3262,157,5,10,http://localhost:8081/api/users,10,0,0
+1767732483553,9,GET All Items,200,,Item Service Load 1-2,text,true,,4304,157,5,10,http://localhost:8080/api/items,9,0,0
+1767732483561,10,GET All Users,200,,User Service Load 2-2,text,true,,3262,157,5,10,http://localhost:8081/api/users,10,0,0
+1767732483687,7,POST Create User,201,,User Service Load 2-1,text,true,,246,243,5,10,http://localhost:8081/api/users,7,0,0
+1767732484008,7,GET Non-existent User (404),404,,User Service Load 2-5,,false,,121,163,5,10,http://localhost:8081/api/users/99999,7,0,0
+1767732484008,7,GET Non-existent Item (404),404,,Item Service Load 1-5,,false,,121,163,5,10,http://localhost:8080/api/items/99999,7,0,0
+1767732484045,7,GET Non-existent User (404),404,,User Service Load 2-3,,false,,121,163,5,10,http://localhost:8081/api/users/99999,7,0,0
+1767732484046,6,GET Non-existent Item (404),404,,Item Service Load 1-3,,false,,121,163,5,10,http://localhost:8080/api/items/99999,6,0,0
+1767732484047,6,GET Item by ID,200,,Item Service Load 1-1,text,true,,267,160,5,10,http://localhost:8080/api/items/44,5,0,0
+1767732484057,14,POST Create Item,201,,Item Service Load 1-4,text,true,,266,263,5,10,http://localhost:8080/api/items,14,0,0
+1767732484063,9,POST Create Item,201,,Item Service Load 1-2,text,true,,267,264,5,10,http://localhost:8080/api/items,8,0,0
+1767732484062,11,POST Create User,201,,User Service Load 2-4,text,true,,244,241,5,10,http://localhost:8081/api/users,10,0,0
+1767732484072,7,POST Create User,201,,User Service Load 2-2,text,true,,246,243,5,10,http://localhost:8081/api/users,7,0,0
+1767732484195,6,GET User by ID,200,,User Service Load 2-1,text,true,,246,160,5,10,http://localhost:8081/api/users/44,6,0,0
+1767732484516,8,GET All Users,200,,User Service Load 2-5,text,true,,3482,157,5,10,http://localhost:8081/api/users,8,0,0
+1767732484516,9,GET All Items,200,,Item Service Load 1-5,text,true,,4493,157,5,10,http://localhost:8080/api/items,9,0,0
+1767732484553,6,GET Non-existent Item (404),404,,Item Service Load 1-1,,false,,121,163,5,10,http://localhost:8080/api/items/99999,6,0,0
+1767732484553,7,GET All Items,200,,Item Service Load 1-3,text,true,,4493,157,5,10,http://localhost:8080/api/items,6,0,0
+1767732484553,8,GET All Users,200,,User Service Load 2-3,text,true,,3482,157,5,10,http://localhost:8081/api/users,7,0,0
+1767732484572,6,GET Item by ID,200,,Item Service Load 1-4,text,true,,266,160,4,9,http://localhost:8080/api/items/45,6,0,0
+1767732484573,5,GET Item by ID,200,,Item Service Load 1-2,text,true,,267,160,4,9,http://localhost:8080/api/items/46,5,0,0
+1767732484573,7,GET User by ID,200,,User Service Load 2-4,text,true,,244,160,5,9,http://localhost:8081/api/users/45,6,0,0
+1767732484580,5,GET User by ID,200,,User Service Load 2-2,text,true,,246,160,5,9,http://localhost:8081/api/users/46,5,0,0
+1767732484702,6,GET Non-existent User (404),404,,User Service Load 2-1,,false,,121,163,5,9,http://localhost:8081/api/users/99999,6,0,0
+1767732485025,9,POST Create Item,201,,Item Service Load 1-5,text,true,,266,263,4,8,http://localhost:8080/api/items,8,0,0
+1767732485025,10,POST Create User,201,,User Service Load 2-5,text,true,,244,241,4,8,http://localhost:8081/api/users,9,0,0
+1767732485061,8,POST Create User,201,,User Service Load 2-3,text,true,,246,243,4,8,http://localhost:8081/api/users,8,0,0
+1767732485061,9,POST Create Item,201,,Item Service Load 1-3,text,true,,267,264,4,8,http://localhost:8080/api/items,9,0,0
+1767732485079,7,GET Non-existent Item (404),404,,Item Service Load 1-4,,false,,121,163,4,8,http://localhost:8080/api/items/99999,7,0,0
+1767732485079,7,GET Non-existent Item (404),404,,Item Service Load 1-2,,false,,121,163,4,8,http://localhost:8080/api/items/99999,7,0,0
+1767732485080,6,GET Non-existent User (404),404,,User Service Load 2-4,,false,,121,163,4,7,http://localhost:8081/api/users/99999,6,0,0
+1767732485086,7,GET Non-existent User (404),404,,User Service Load 2-2,,false,,121,163,4,7,http://localhost:8081/api/users/99999,7,0,0
+1767732485534,7,GET Item by ID,200,,Item Service Load 1-5,text,true,,266,160,3,6,http://localhost:8080/api/items/47,7,0,0
+1767732485535,7,GET User by ID,200,,User Service Load 2-5,text,true,,244,160,3,6,http://localhost:8081/api/users/47,6,0,0
+1767732485570,8,GET User by ID,200,,User Service Load 2-3,text,true,,246,160,3,6,http://localhost:8081/api/users/48,7,0,0
+1767732485572,7,GET Item by ID,200,,Item Service Load 1-3,text,true,,267,160,3,6,http://localhost:8080/api/items/48,7,0,0
+1767732485587,9,GET All Users,200,,User Service Load 2-4,text,true,,3628,157,3,6,http://localhost:8081/api/users,9,0,0
+1767732485587,10,GET All Items,200,,Item Service Load 1-4,text,true,,4682,157,3,6,http://localhost:8080/api/items,10,0,0
+1767732486042,7,GET Non-existent Item (404),404,,Item Service Load 1-5,,false,,121,163,3,6,http://localhost:8080/api/items/99999,7,0,0
+1767732486042,7,GET Non-existent User (404),404,,User Service Load 2-5,,false,,121,163,3,6,http://localhost:8081/api/users/99999,7,0,0
+1767732486080,7,GET Non-existent Item (404),404,,Item Service Load 1-3,,false,,121,163,3,6,http://localhost:8080/api/items/99999,7,0,0
+1767732486079,8,GET Non-existent User (404),404,,User Service Load 2-3,,false,,121,163,3,6,http://localhost:8081/api/users/99999,8,0,0
+1767732486097,13,POST Create User,201,,User Service Load 2-4,text,true,,246,243,2,4,http://localhost:8081/api/users,13,0,0
+1767732486099,13,POST Create Item,201,,Item Service Load 1-4,text,true,,267,264,2,4,http://localhost:8080/api/items,12,0,0
+1767732486549,7,GET All Users,200,,User Service Load 2-5,text,true,,3702,157,2,4,http://localhost:8081/api/users,7,0,0
+1767732486549,8,GET All Items,200,,Item Service Load 1-5,text,true,,4777,157,2,4,http://localhost:8080/api/items,8,0,0
+1767732486612,7,GET User by ID,200,,User Service Load 2-4,text,true,,246,160,2,4,http://localhost:8081/api/users/49,6,0,0
+1767732486613,6,GET Item by ID,200,,Item Service Load 1-4,text,true,,267,160,2,4,http://localhost:8080/api/items/49,6,0,0
+1767732487058,8,POST Create User,201,,User Service Load 2-5,text,true,,246,243,2,4,http://localhost:8081/api/users,8,0,0
+1767732487059,8,POST Create Item,201,,Item Service Load 1-5,text,true,,267,264,2,4,http://localhost:8080/api/items,7,0,0
+1767732487120,7,GET Non-existent User (404),404,,User Service Load 2-4,,false,,121,163,2,4,http://localhost:8081/api/users/99999,7,0,0
+1767732487120,7,GET Non-existent Item (404),404,,Item Service Load 1-4,,false,,121,163,2,4,http://localhost:8080/api/items/99999,7,0,0
+1767732487567,7,GET User by ID,200,,User Service Load 2-5,text,true,,246,160,1,2,http://localhost:8081/api/users/50,7,0,0
+1767732487567,8,GET Item by ID,200,,Item Service Load 1-5,text,true,,267,160,1,2,http://localhost:8080/api/items/50,7,0,0
+1767732488076,8,GET Non-existent User (404),404,,User Service Load 2-5,,false,,121,163,1,2,http://localhost:8081/api/users/99999,8,0,0
+1767732488076,8,GET Non-existent Item (404),404,,Item Service Load 1-5,,false,,121,163,1,2,http://localhost:8080/api/items/99999,8,0,0

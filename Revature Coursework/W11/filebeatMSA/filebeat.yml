@@ -1,0 +1,59 @@
+# Filebeat Configuration
+# Ships JSON logs from MULTIPLE services on this node to Logstash
+# Demonstrates log aggregation from multiple applications
+
+###################### Filebeat inputs ######################
+filebeat.inputs:
+  # Item Service logs
+  - type: log
+    id: item-service-logs
+    enabled: true
+    paths:
+      - /var/log/app/application.log
+    
+    # Parse JSON logs
+    json.keys_under_root: true
+    json.overwrite_keys: true
+    json.add_error_key: true
+    json.expand_keys: true
+    
+    # Metadata will come from the JSON itself (app_name field in logback config)
+    fields:
+      log_type: application
+    fields_under_root: true
+
+  # User Service logs
+  - type: log
+    id: user-service-logs
+    enabled: true
+    paths:
+      - /var/log/app/user-service.log
+    
+    # Parse JSON logs
+    json.keys_under_root: true
+    json.overwrite_keys: true
+    json.add_error_key: true
+    json.expand_keys: true
+    
+    # Metadata will come from the JSON itself (app_name field in logback config)
+    fields:
+      log_type: application
+    fields_under_root: true
+
+###################### Processors ######################
+processors:
+  - add_host_metadata:
+      when.not.contains.tags: forwarded
+  - add_docker_metadata: ~
+  - drop_fields:
+      fields: ["agent.ephemeral_id", "agent.hostname", "agent.id", "agent.version", "agent.type", "ecs.version"]
+      ignore_missing: true
+
+###################### Output ######################
+output.logstash:
+  hosts: ["logstash:5044"]
+
+###################### Logging ######################
+logging.level: info
+logging.to_files: false
+logging.to_stderr: true

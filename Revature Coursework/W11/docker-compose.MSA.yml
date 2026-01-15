@@ -1,0 +1,99 @@
+# Microservices Architecture (MSA) Stack
+# Demonstrates Filebeat log aggregation from MULTIPLE services
+# Start this AFTER the ELK stack is running
+
+services:
+  # PostgreSQL Database (shared by both services)
+  postgres:
+    image: postgres:15-alpine
+    container_name: postgres
+    environment:
+      POSTGRES_DB: elkdemo
+      POSTGRES_USER: elkuser
+      POSTGRES_PASSWORD: elkpass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - elk-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U elkuser -d elkdemo"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Item Service API (port 8080)
+  item-service:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: item-service
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/elkdemo
+      - SPRING_DATASOURCE_USERNAME=elkuser
+      - SPRING_DATASOURCE_PASSWORD=elkpass
+    volumes:
+      - app-logs:/var/log/app
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - elk-network
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:8080/actuator/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      start_period: 60s
+      retries: 3
+
+  # User Service API (port 8081)
+  user-service:
+    build:
+      context: ./user-service
+      dockerfile: Dockerfile
+    container_name: user-service
+    ports:
+      - "8081:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/elkdemo
+      - SPRING_DATASOURCE_USERNAME=elkuser
+      - SPRING_DATASOURCE_PASSWORD=elkpass
+    volumes:
+      - app-logs:/var/log/app
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - elk-network
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:8081/actuator/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      start_period: 60s
+      retries: 3
+
+  # Filebeat - Sidecar log shipper (monitors logs from ALL services)
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:8.11.0
+    container_name: filebeat
+    user: root
+    volumes:
+      - ./filebeatMSA/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+      - app-logs:/var/log/app:ro
+    networks:
+      - elk-network
+    command: filebeat -e -strict.perms=false
+
+volumes:
+  postgres-data:
+    driver: local
+  app-logs:
+    driver: local
+
+networks:
+  elk-network:
+    external: true
+    name: elk-network

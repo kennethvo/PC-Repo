@@ -1,7 +1,7 @@
 package com.revature.ExpenseReport.Model;
 
 import jakarta.persistence.*;
-import lombok.ToString;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
